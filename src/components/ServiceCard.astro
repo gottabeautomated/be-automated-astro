@@ -1,0 +1,61 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  icon?: string;
+  image: string;
+  color?: string;
+}
+
+const { title, description, image, color = 'from-orange-500 to-red-500' } = Astro.props;
+---
+
+<div
+  class="relative w-full h-72 rounded-2xl overflow-hidden shadow-lg group transform transition-all duration-500 ease-in-out hover:rotate-1 hover:scale-105 hover:shadow-2xl cursor-pointer"
+  data-aos="fade-up" 
+  data-aos-delay="150"
+>
+  <img
+    src={image}
+    alt={title}
+    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:brightness-110 group-hover:contrast-105"
+  />
+
+  <div
+    class={`absolute inset-0 bg-gradient-to-br ${color} opacity-70 mix-blend-multiply group-hover:opacity-75 transition-all duration-500`}
+  ></div>
+
+  <!-- Verbesserter Glaseffekt unten -->
+  <div class="absolute bottom-0 w-full px-6 py-6 bg-black/40 backdrop-blur-md transition-all duration-500 group-hover:backdrop-blur-lg group-hover:bg-black/45">
+    <h3 class="text-white text-2xl font-extrabold mb-1 feature-title">{title}</h3>
+    <p class="text-white/90 text-sm font-medium opacity-90 group-hover:opacity-100 transition-opacity duration-300">{description}</p>
+  </div>
+
+  <!-- Subtiles Leuchten beim Hover -->
+  <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-t from-transparent to-white/10 pointer-events-none"></div>
+  
+  <!-- Zusätzlicher Glanz-Effekt -->
+  <div class="absolute -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-0 group-hover:opacity-20 group-hover:animate-shine"></div>
+</div>
+
+<style>
+  .feature-title {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4), 
+                0 8px 16px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 10;
+  }
+  
+  @keyframes shine {
+    0% {
+      left: -100%;
+    }
+    100% {
+      left: 200%;
+    }
+  }
+  
+  .group:hover .animate-shine {
+    animation: shine 1.5s ease-in-out;
+  }
+</style> 
