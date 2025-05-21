@@ -12,6 +12,7 @@
     "@astrojs/mdx": "^4.2.6",
     "@astrojs/react": "^4.2.7",
     "@astrojs/tailwind": "^6.0.2",
+    "@jop-software/astro-cookieconsent": "^3.0.1",
     "@tailwindcss/typography": "^0.5.16",
     "astro": "^5.7.13",
     "astro-icon": "^1.1.5",
