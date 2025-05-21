@@ -1,0 +1,81 @@
+---
+const { title, description, image, color, anchor } = Astro.props;
+---
+
+{anchor ? (
+  <a href={anchor} class={`block group relative rounded-2xl overflow-hidden shadow-xl min-h-[320px] flex flex-col justify-end bg-gray-900 cursor-pointer transition-transform duration-200 hover:scale-[1.03]`}>
+    <img src={image} alt={title} class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+    <div class={`absolute inset-0 bg-gradient-to-t ${color} opacity-80 group-hover:opacity-90 transition duration-300`}></div>
+    <div class="relative z-10 p-6 flex flex-col justify-end h-full">
+      <h3 class="text-2xl font-bold text-white mb-2 drop-shadow">{title}</h3>
+      <p class="text-gray-200 mb-4">{description}</p>
+      <span class="inline-block bg-white/10 text-white font-medium py-2 px-5 rounded-full shadow hover:bg-[#c2783c] hover:text-white transition-colors duration-200 w-max">Mehr erfahren</span>
+    </div>
+  </a>
+) : (
+  <div class="relative rounded-2xl overflow-hidden shadow-xl group min-h-[320px] flex flex-col justify-end bg-gray-900">
+    <img src={image} alt={title} class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+    <div class={`absolute inset-0 bg-gradient-to-t ${color} opacity-80 group-hover:opacity-90 transition duration-300`}></div>
+    <div class="relative z-10 p-6 flex flex-col justify-end h-full">
+      <h3 class="text-2xl font-bold text-white mb-2 drop-shadow">{title}</h3>
+      <p class="text-gray-200 mb-4">{description}</p>
+      <span class="inline-block bg-white/10 text-white font-medium py-2 px-5 rounded-full shadow hover:bg-[#c2783c] hover:text-white transition-colors duration-200 w-max">Mehr erfahren</span>
+    </div>
+  </div>
+)}
+
+<style>
+.whatwedo-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  min-height: 280px;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.whatwedo-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+}
+.whatwedo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,rgba(20,22,34,0.2) 0%,rgba(20,22,34,0.95) 80%);
+  z-index: 1;
+}
+.whatwedo-content {
+  position: relative;
+  z-index: 2;
+  padding: 32px 24px 24px 24px;
+  color: #fff;
+  width: 100%;
+}
+.whatwedo-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.whatwedo-content p {
+  color: #e0e0e0;
+  margin-bottom: 18px;
+}
+.whatwedo-btn {
+  display: inline-block;
+  background: linear-gradient(90deg,#c2783c,#ff8800);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 22px;
+  text-decoration: none;
+  margin-top: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+.whatwedo-btn:hover {
+  background: #fff;
+  color: #c2783c;
+}
+</style> 

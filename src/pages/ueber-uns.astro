@@ -1,0 +1,328 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Picture } from 'astro:assets'; // Für spätere Bildoptimierung
+
+// Platzhalter-Daten für das Team (später durch echte Daten ersetzen)
+const teamMembers = [
+  {
+    name: "Jonas Behrmann",
+    position: "CEO & Co-Founder",
+    description: "Visionär und Stratege, treibt die Entwicklung von Be Automated voran mit Fokus auf innovative KI-Lösungen.",
+    imgSrc: "https://via.placeholder.com/300x300.png?text=Max+M.",
+    linkedin: "#"
+  },
+  {
+    name: "Karina Anders",
+    position: "CTO & Co-Founder",
+    description: "Technische Leitung und Expertin für Prozessautomatisierung und Implementierung komplexer Systeme.",
+    imgSrc: "https://via.placeholder.com/300x300.png?text=Erika+M.",
+    linkedin: "#"
+  },
+  {
+    name: "Simon Behrmann",
+    position: "Head of Operations",
+    description: "Sorgt für reibungslose Abläufe und die erfolgreiche Umsetzung unserer Kundenprojekte.",
+    imgSrc: "https://via.placeholder.com/300x300.png?text=Jonas+S.",
+    linkedin: "#"
+  }
+];
+
+const testimonials = [
+  {
+    quote: "Be Automated hat unsere internen Prozesse revolutioniert und uns geholfen, signifikante Kosteneinsparungen zu erzielen. Absolut empfehlenswert!",
+    name: "Anna Müller",
+    position: "Geschäftsführerin, Beispiel Startup GmbH",
+    imgSrc: "https://via.placeholder.com/100x100.png?text=Anna+M."
+  },
+  {
+    quote: "Die Zusammenarbeit war von Anfang an professionell und ergebnisorientiert. Die Expertise des Teams ist beeindruckend.",
+    name: "Peter Klein",
+    position: "Leiter Digitalisierung, Mittelstand Corp.",
+    imgSrc: "https://via.placeholder.com/100x100.png?text=Peter+K."
+  }
+];
+---
+
+<BaseLayout
+  title="Über Uns - Wir machen Automatisierung zum Wettbewerbsvorteil | Be Automated"
+  description="Lernen Sie das Team und die Mission von Be Automated kennen. Erfahren Sie, wie wir KI-Expertise und Prozessoptimierung für Ihren Erfolg einsetzen."
+>
+  <div class="relative bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+    <!-- Subtiles Hintergrundmuster (optional, anpassbar an Neon) -->
+    <div class="absolute inset-0 -z-10 overflow-hidden opacity-50 dark:opacity-20">
+      <svg class="absolute left-[50%] top-0 h-[64rem] w-[128rem] translate-x-[-50%] stroke-gray-300 dark:stroke-gray-700 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]" aria-hidden="true">
+        <defs>
+          <pattern id="e813992c-7d03-4cc4-a2bd-151a68b855a7-bg" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+            <path d="M100 200V.5M.5 .5H200" fill="none"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" stroke-width="0" fill="url(#e813992c-7d03-4cc4-a2bd-151a68b855a7-bg)"/>
+      </svg>
+    </div>
+
+    <!-- 1. Hero-Bereich -->
+    <section class="py-20 sm:py-28 relative z-10">
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight text-gray-800 dark:text-white">
+          Wir automatisieren - Dein <span class="text-orange-500 dark:text-orange-400" style="text-shadow: 0 0 12px currentColor;">Wettbewerbsvorteil</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-200 max-w-3xl mx-auto mb-10">
+          Wir verbinden KI-Power mit Prozess-Know-how für Automatisierungslösungen, die nicht nur beeindrucken – sondern revolutionieren
+        </p>
+        <!-- Neon-Grafik 1 Platzhalter -->
+        <div class="my-12 h-auto max-h-96 flex items-center justify-center rounded-lg">
+          <Picture 
+            src="/images/ueber-uns/neon-robot-arm.png" 
+            alt="Neon Roboterarm manipuliert Prozessablauf"
+            widths={[400, 600, 800]}
+            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 800px"
+            formats={['avif', 'webp', 'png']}
+            loading="eager" 
+            decoding="async"
+            class="max-h-full object-contain"
+            width={1024}
+            height={1536}
+           />
+        </div>
+      </div>
+    </section>
+
+    <!-- Trenner mit Neon-Akzent -->
+    <div class="relative">
+      <div class="absolute inset-0 flex items-center" aria-hidden="true">
+        <div class="w-full border-t border-orange-300 dark:border-orange-500/30"></div>
+      </div>
+    </div>
+
+    <!-- 2. Unsere Mission -->
+    <section class="py-16 sm:py-24 bg-gray-50 dark:bg-gray-900">
+      <div class="container mx-auto px-6 max-w-3xl text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-orange-600 dark:text-orange-400">Unsere Mission</h2>
+        <div class="text-lg text-gray-700 dark:text-gray-200 leading-relaxed space-y-4">
+          <p>
+            Wir verwandeln manuelle Zeitfresser in digitale Effizienzmaschinen. Das Ergebnis? Bis zu 70% Zeitersparnis, minimale Fehlerquoten und Teams, die endlich wieder das tun können, wofür sie wirklich brennen – Innovation statt Repetition.
+          </p>
+          <p>
+            Schluss mit ineffizienten Routineaufgaben! Unsere Tech-Stack wandelt deine manuellen Prozesse in automatisierte Powerflows um – messbar schneller, garantiert fehlerärmer und mit sofort spürbarem Impact auf deine Business-Performance.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Unsere Geschichte -->
+    <section class="py-16 sm:py-24 bg-white dark:bg-gray-900">
+      <div class="container mx-auto px-6 max-w-3xl text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-8 text-green-600 dark:text-green-400">Unsere Geschichte</h2>
+        <div class="prose prose-lg dark:prose-invert text-gray-700 dark:text-gray-200 mx-auto text-left space-y-6">
+          <p>
+            "Warum machen wir das immer noch von Hand?"
+          </p>
+          <p>
+            Diese Frage stellte ich mir täglich als Geschäftsführer meines Handwerksbetriebs. Während meine Mitarbeiter meisterhafte Arbeit leisteten, versanken wir in Papierkram, ineffizienten Abläufen und endloser manueller Dateneingabe.
+          </p>
+          <p>
+            Die großen Automatisierungstools? Zu teuer, zu unflexibel, und vor allem: nicht für KMUs gebaut.
+          </p>
+          <p>
+            Also begann ich, eigene digitale Helfer zu entwickeln. Kleine Tools für Leadgenerierung. Ein System für Social Media. Automatisierte Workflows für die Auftragsabwicklung. Die Ergebnisse waren transformativ: Plötzlich hatten wir Zeit für das, was wirklich zählt – Kunden begeistern und das Geschäft ausbauen.
+          </p>
+          <p>
+            2021 wurde aus Hobby Berufung. Die digitale Revolution, die ich in meinem Betrieb erlebt hatte, wollte ich anderen Unternehmen zugänglich machen.
+          </p>
+          <p>
+            Be Automated wurde geboren – aus der Praxis für die Praxis. Mit einem Team aus Tech-Enthusiasten und Prozessexperten bringen wir heute Automatisierungslösungen in Unternehmen, die vorher glaubten, digitale Transformation sei nur etwas für Konzerne.
+          </p>
+          <p>
+            Unser Erfolgsgeheimnis? Wir verstehen nicht nur Code, sondern auch das echte Unternehmerleben. Die täglichen Herausforderungen. Die begrenzten Ressourcen. Und die unbegrenzten Möglichkeiten, wenn Mitarbeiter von digitalen Routinen befreit werden.
+          </p>
+          <p>
+            Vom Handwerker zum Digital-Pionier – wir bauen Automatisierungslösungen mit dem gleichen Qualitätsanspruch, den ich damals von meinen Handwerkern erwartete. Solide, effektiv und immer mit messbarem Mehrwert.
+          </p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- 4. Unser Team -->
+    <section class="py-16 sm:py-24 bg-gray-50 dark:bg-gray-900">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-violet-600 dark:text-violet-400">Unser Team</h2>
+          <p class="text-lg text-gray-600 dark:text-gray-200 max-w-2xl mx-auto">Lernen Sie die Köpfe hinter Be Automated kennen.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 mb-16">
+          {teamMembers.map(member => (
+            <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-md p-6 rounded-xl shadow-2xl border border-violet-300 dark:border-violet-500/40 text-center group transform hover:scale-105 transition-all duration-300 ease-in-out hover:shadow-[0_0_25px_5px_rgba(139,92,246,0.2)] dark:hover:shadow-[0_0_25px_5px_rgba(139,92,246,0.3)]">
+              <div class="relative mb-4">
+                <img 
+                  class="w-32 h-32 rounded-full mx-auto border-2 border-violet-500 dark:border-violet-400 object-cover shadow-lg group-hover:border-violet-400 dark:group-hover:border-violet-300 transition-colors duration-300"
+                  src={member.imgSrc} 
+                  alt={`Foto von ${member.name}`} 
+                  width="300"
+                  height="300"
+                />
+                <div class="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-transparent to-violet-500/10 dark:to-violet-500/20 pointer-events-none"></div>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-1">{member.name}</h3>
+              <p class="text-violet-600 dark:text-violet-300 mb-2">{member.position}</p>
+              <p class="text-sm text-gray-500 dark:text-gray-100 mb-3 px-2">{member.description}</p>
+              <a href={member.linkedin} target="_blank" rel="noopener noreferrer" class="text-orange-600 dark:text-orange-400 hover:text-orange-500 dark:hover:text-orange-300 transition-colors text-sm">
+                LinkedIn Profil &rarr;
+              </a>
+            </div>
+          ))}
+        </div>
+
+        <div class="max-w-3xl mx-auto text-center">
+          <h3 class="text-2xl font-semibold mb-4 text-gray-800 dark:text-white">Das Team dahinter</h3>
+          <p class="text-lg text-gray-700 dark:text-gray-200 leading-relaxed">
+            Unser interdisziplinäres Team vereint Experten aus KI-Entwicklung, Prozessoptimierung, Datenanalyse und Change Management. Diese Vielfalt ermöglicht es uns, komplexe Herausforderungen aus verschiedenen Perspektiven zu betrachten und innovative Lösungen zu entwickeln.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Unsere Werte -->
+    <section class="py-16 sm:py-24 bg-white dark:bg-gray-900">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-cyan-600 dark:text-cyan-400">Unsere Werte</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {[
+            { title: "Transparenz", description: "Klare Kommunikation und nachvollziehbare Ergebnisse.", color: "cyan", lightColor: "cyan" },
+            { title: "Innovation", description: "Wir bleiben immer an der Spitze der technologischen Entwicklung.", color: "green", lightColor: "green" },
+            { title: "Effizienz", description: "Wir leben, was wir predigen: Optimierte Prozesse in allem, was wir tun.", color: "orange", lightColor: "orange" },
+            { title: "Messbarkeit", description: "Wenn es sich nicht messen lässt, lässt es sich nicht verbessern.", color: "violet", lightColor: "purple" },
+            { title: "Nachhaltigkeit", description: "Unsere Lösungen wachsen mit deinem Unternehmen mit.", color: "pink", lightColor: "pink" }
+          ].map(value => (
+            <div class={`bg-white/80 dark:bg-gray-800/70 backdrop-blur-sm p-6 rounded-lg shadow-lg border border-${value.lightColor}-400 dark:border-${value.color}-500/50 transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-[0_0_20px_3px_var(--tw-shadow-color,${value.lightColor}-400)] dark:hover:shadow-[0_0_20px_3px_var(--tw-shadow-color,${value.color}-500)] hover:shadow-${value.lightColor}-400/40 dark:hover:shadow-${value.color}-500/40`}>
+              <h3 class={`text-xl font-semibold text-${value.lightColor}-600 dark:text-${value.color}-400 mb-2`}>{value.title}</h3>
+              <p class="text-gray-600 dark:text-gray-200">{value.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Unsere Expertise -->
+    <section class="py-16 sm:py-24 bg-gray-50 dark:bg-gray-900">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-lime-600 dark:text-lime-400">Unsere Expertise</h2>
+        </div>
+        <!-- Neon-Grafik 2 ersetzt durch Video -->
+        <div class="my-12 h-auto max-h-96 flex items-center justify-center rounded-lg">
+          <video
+            src="/images/ueber-uns/neon-brain-network.mp4"
+            autoplay
+            muted
+            playsinline
+            width="1024"
+            height="1536"
+            class="max-h-full object-contain"
+          >
+            Dein Browser unterstützt das Video-Tag nicht.
+          </video>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto mt-16">
+          <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-cyan-300 dark:border-cyan-500/40">
+            <h3 class="text-2xl font-semibold text-cyan-600 dark:text-cyan-400 mb-4">Technologien</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-200 pl-2">
+              <li>RPA (Robotic Process Automation)</li>
+              <li>Machine Learning & Deep Learning</li>
+              <li>NLP (Natural Language Processing)</li>
+              <li>Computer Vision</li>
+              <li>Process Mining & Task Mining</li>
+              <li>KI-gestützte Datenanalyse & BI</li>
+              <li>Chatbots & Virtuelle Assistenten</li>
+              <li>Cloud-Automatisierung (AWS, Azure, GCP)</li>
+            </ul>
+          </div>
+          <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm p-6 rounded-xl shadow-lg border border-cyan-300 dark:border-cyan-500/40">
+            <h3 class="text-2xl font-semibold text-cyan-600 dark:text-cyan-400 mb-4">Branchen-Expertise</h3>
+            <ul class="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-200 pl-2">
+              <li>Finance & Versicherungswesen</li>
+              <li>Manufacturing & Industrie 4.0</li>
+              <li>Healthcare & Medizintechnik</li>
+              <li>E-Commerce & Handel</li>
+              <li>Logistics & Supply Chain</li>
+              <li>IT & Telekommunikation</li>
+              <li>Öffentlicher Sektor</li>
+              <li>Energie & Umwelt</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Kundenreferenzen -->
+    <section class="py-16 sm:py-24 bg-white dark:bg-gray-900">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl sm:text-4xl font-bold text-pink-600 dark:text-pink-400 mb-4">Das sagen unsere Kunden</h2>
+          <p class="text-lg text-gray-600 dark:text-gray-200 max-w-3xl mx-auto">
+            Von Start-ups bis zu etablierten Mittelständlern: Wir haben bereits über 50 Unternehmen dabei geholfen, ihre Prozesse zu revolutionieren und messbare Effizienzsteigerungen zu erzielen.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-12 max-w-4xl mx-auto">
+          {testimonials.map(testimonial => (
+            <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-md p-6 rounded-xl shadow-xl border border-pink-300 dark:border-pink-500/40 flex flex-col items-center text-center group transform hover:scale-105 transition-all duration-300 ease-in-out hover:shadow-[0_0_25px_5px_rgba(236,72,153,0.2)] dark:hover:shadow-[0_0_25px_5px_rgba(236,72,153,0.3)]">
+              <div class="relative mb-4">
+                <img 
+                  class="w-20 h-20 rounded-full border-2 border-pink-500 dark:border-pink-400 object-cover shadow-md group-hover:border-pink-400 dark:group-hover:border-pink-300 transition-colors duration-300"
+                  src={testimonial.imgSrc} 
+                  alt={`Foto von ${testimonial.name}`} 
+                  width="100"
+                  height="100"
+                />
+                <div class="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-transparent to-pink-500/5 dark:to-pink-500/10 pointer-events-none"></div>
+              </div>
+              <blockquote class="italic text-gray-700 dark:text-gray-200 mb-4 relative z-10">"{testimonial.quote}"</blockquote>
+              <p class="font-semibold text-gray-800 dark:text-white">{testimonial.name}</p>
+              <p class="text-sm text-pink-600 dark:text-pink-300">{testimonial.position}</p>
+            </div>
+          ))}
+        </div>
+        
+        <div class="text-center mt-12">
+          <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-6">Vertraut von Unternehmen wie:</h3>
+          <div class="flex flex-wrap justify-center items-center gap-8 lg:gap-12 opacity-80 dark:opacity-75">
+            <!-- Logo Platzhalter -->
+            <img src="https://via.placeholder.com/120x60.png?text=Kunde+A" alt="Logo Kunde A" class="h-10 lg:h-12"/>
+            <img src="https://via.placeholder.com/150x50.png?text=Kunde+B+AG" alt="Logo Kunde B AG" class="h-10 lg:h-12"/>
+            <img src="https://via.placeholder.com/100x70.png?text=Partner+C" alt="Logo Partner C" class="h-10 lg:h-12"/>
+            <img src="https://via.placeholder.com/160x60.png?text=Startup+D" alt="Logo Startup D" class="h-10 lg:h-12"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Call-to-Action -->
+    <section class="py-20 sm:py-28 bg-gradient-to-r from-orange-500 via-pink-600 to-purple-600">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-8 drop-shadow-lg">Bereit für die Automatisierung deiner Prozesse?</h2>
+        <a 
+          href="/kontakt" 
+          class="inline-flex items-center justify-center px-8 py-3.5 font-semibold text-white bg-[#c2783c] rounded-lg shadow-xl hover:bg-[#b46c35] transition-all duration-300 transform hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-[#c2783c] group"
+        >
+          <span>Kostenloses Erstgespräch vereinbaren</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  .prose-invert a {
+    color: theme('colors.orange.400');
+  }
+  .prose-invert a:hover {
+    color: theme('colors.orange.300');
+  }
+</style> 

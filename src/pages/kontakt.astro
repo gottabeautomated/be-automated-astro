@@ -1,0 +1,424 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Kontakt - Starten Sie Ihre Automatisierungsreise | Be Automated"
+  description="Erhalten Sie eine maßgeschneiderte Analyse Ihrer Prozesse und erfahren Sie, welches Optimierungspotenzial in Ihrem Unternehmen schlummert."
+>
+  <div class="relative">
+    <!-- Subtiles Hintergrundmuster -->
+    <div class="absolute inset-0 -z-10 overflow-hidden">
+      <svg class="absolute left-[50%] top-0 h-[48rem] w-[128rem] translate-x-[-50%] stroke-gray-200 dark:stroke-gray-700/60 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]" aria-hidden="true">
+        <defs>
+          <pattern id="e813992c-7d03-4cc4-a2bd-151a68b855a7" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse">
+            <path d="M100 200V.5M.5 .5H200" fill="none"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" stroke-width="0" fill="url(#e813992c-7d03-4cc4-a2bd-151a68b855a7)"/>
+      </svg>
+    </div>
+
+    <section class="py-16 relative z-10">
+      <div class="container mx-auto px-4 max-w-2xl">
+        <div class="text-center mb-12">
+          <h1 class="text-4xl font-bold mb-4 leading-tight text-gray-900 dark:text-white">Starten Sie Ihre Automatisierungsreise</h1>
+          <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Erhalten Sie eine maßgeschneiderte Analyse Ihrer Prozesse und erfahren Sie, welches Optimierungspotenzial in Ihrem Unternehmen schlummert.
+          </p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800/90 backdrop-blur-sm p-8 sm:p-10 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700">
+          <h2 class="text-2xl font-semibold mb-8 text-center text-gray-800 dark:text-gray-200">Senden Sie uns eine Nachricht</h2>
+          
+          <form method="POST" action="https://n8n.deinserver.at/webhook/kontakt" class="space-y-8">
+            <!-- Name mit Floating Label -->
+            <div class="relative">
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                required 
+                class="peer block w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-transparent rounded-lg text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent placeholder-transparent transition-colors"
+                placeholder="Ihr Name"
+              />
+              <label 
+                for="name" 
+                class="absolute left-4 top-3 text-gray-500 dark:text-gray-400 transition-all duration-200 ease-in-out peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:top-[-0.75rem] peer-focus:text-xs peer-focus:text-orange-600 dark:peer-focus:text-orange-400 peer-[:not(:placeholder-shown)]:top-[-0.75rem] peer-[:not(:placeholder-shown)]:text-xs"
+              >
+                Ihr Name
+              </label>
+            </div>
+
+            <!-- E-Mail mit Floating Label -->
+            <div class="relative">
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required 
+                class="peer block w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-transparent rounded-lg text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent placeholder-transparent transition-colors"
+                placeholder="Ihre E-Mail-Adresse"
+              />
+              <label 
+                for="email" 
+                class="absolute left-4 top-3 text-gray-500 dark:text-gray-400 transition-all duration-200 ease-in-out peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:top-[-0.75rem] peer-focus:text-xs peer-focus:text-orange-600 dark:peer-focus:text-orange-400 peer-[:not(:placeholder-shown)]:top-[-0.75rem] peer-[:not(:placeholder-shown)]:text-xs"
+              >
+                Ihre E-Mail-Adresse
+              </label>
+            </div>
+
+            <!-- Telefon mit Floating Label -->
+            <div class="relative">
+              <input 
+                type="tel" 
+                id="telefon" 
+                name="telefon" 
+                class="peer block w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-transparent rounded-lg text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent placeholder-transparent transition-colors"
+                placeholder="Ihre Telefonnummer (optional)"
+              />
+              <label 
+                for="telefon" 
+                class="absolute left-4 top-3 text-gray-500 dark:text-gray-400 transition-all duration-200 ease-in-out peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:top-[-0.75rem] peer-focus:text-xs peer-focus:text-orange-600 dark:peer-focus:text-orange-400 peer-[:not(:placeholder-shown)]:top-[-0.75rem] peer-[:not(:placeholder-shown)]:text-xs"
+              >
+                Ihre Telefonnummer (optional)
+              </label>
+            </div>
+
+            <!-- Kategorie-Dropdown (Styling angepasst für Konsistenz) -->
+            <div class="relative">
+              <select 
+                id="kategorie" 
+                name="kategorie" 
+                required 
+                class="peer block w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 rounded-lg text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent appearance-none pr-8 bg-no-repeat transition-colors"
+                style="background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%236B7280%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E'); background-position: right 0.75rem center; background-size: 0.65em auto;"
+              >
+                <option value="" disabled selected class="text-gray-500">Anliegen auswählen...</option>
+                <option value="Prozessautomatisierung">Prozessautomatisierung anfragen</option>
+                <option value="KI-Implementierung">KI-Implementierung besprechen</option>
+                <option value="Datenanalyse_BI">Datenanalyse & BI-Lösungen</option>
+                <option value="Workflow-Optimierung">Workflow-Optimierung</option>
+                <option value="Allgemeine_Anfrage" selected>Allgemeine Anfrage</option>
+              </select>
+               <label 
+                for="kategorie" 
+                class="absolute left-4 top-[-0.75rem] text-xs text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800/90 px-1"
+              >
+                Anliegen
+              </label>
+            </div>
+
+            <!-- Nachricht mit Floating Label -->
+            <div class="relative">
+              <textarea 
+                id="nachricht" 
+                name="nachricht" 
+                rows="4" 
+                required 
+                class="peer block w-full px-4 py-3 border border-gray-300 dark:border-gray-600 bg-transparent rounded-lg text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent placeholder-transparent transition-colors"
+                placeholder="Ihre Nachricht"
+              >Guten Tag,
+
+bitte kontaktieren Sie mich bezüglich meiner Anfrage:
+[Platz für Ihre Nachricht]
+
+Danke!
+[Ihr Name]</textarea>
+              <label 
+                for="nachricht" 
+                class="absolute left-4 top-3 text-gray-500 dark:text-gray-400 transition-all duration-200 ease-in-out peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-focus:top-[-0.75rem] peer-focus:text-xs peer-focus:text-orange-600 dark:peer-focus:text-orange-400 peer-[:not(:placeholder-shown)]:top-[-0.75rem] peer-[:not(:placeholder-shown)]:text-xs"
+              >
+                Ihre Nachricht
+              </label>
+            </div>
+
+            <div class="pt-1">
+              <label for="datenschutz" class="flex items-start">
+                <input 
+                  type="checkbox" 
+                  id="datenschutz" 
+                  name="datenschutz" 
+                  required 
+                  class="h-4 w-4 text-orange-600 border-gray-300 dark:border-gray-600 rounded focus:ring-orange-500 mr-2.5 mt-0.5 flex-shrink-0"
+                />
+                <span class="text-sm text-gray-600 dark:text-gray-400">Ich stimme zu, dass meine Daten zur Bearbeitung meiner Anfrage verwendet werden. Weitere Informationen in der <a href="/datenschutz" class="text-orange-600 hover:underline">Datenschutzerklärung</a>.</span>
+              </label>
+            </div>
+            
+            <div class="pt-4">
+              <button 
+                type="submit" 
+                class="w-full bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3.5 px-6 rounded-lg transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 shadow-lg hover:shadow-xl transform hover:scale-105"
+              >
+                Kostenlose Beratung starten
+              </button>
+            </div>
+          </form>
+          <p class="mt-8 text-sm text-gray-500 dark:text-gray-400 text-center">
+            Nach Absenden Ihrer Anfrage erhalten Sie innerhalb eines Werktages eine persönliche Antwort von unserem Expertenteam.
+          </p>
+          <div class="mt-6">
+            <div class="cf-turnstile" data-sitekey="YOUR_SITE_KEY_HERE" data-callback="onTurnstileSuccess"></div>
+            <p id="turnstile-message" class="text-xs text-red-500 mt-1"></p>
+          </div>
+        </div>
+
+        <!-- NEU: Vertrauenselemente -->
+        <!-- 
+        <div class="mt-16 text-center">
+          <h2 class="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-8">Das sagen unsere Kunden</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <div class="bg-gray-50 dark:bg-gray-700/50 p-6 rounded-lg shadow-md">
+              <p class="text-gray-600 dark:text-gray-300 italic">\"Fantastischer Service und beeindruckende Ergebnisse! Be Automated hat unsere Erwartungen übertroffen.\"</p>
+              <p class="mt-4 font-semibold text-gray-700 dark:text-gray-200">- Max Mustermann, CEO Musterfirma</p>
+            </div>
+            <div class="bg-gray-50 dark:bg-gray-700/50 p-6 rounded-lg shadow-md">
+              <p class="text-gray-600 dark:text-gray-300 italic">\"Die Prozessautomatisierung hat uns enorm viel Zeit gespart. Sehr empfehlenswert!\"</p>
+              <p class="mt-4 font-semibold text-gray-700 dark:text-gray-200">- Erika Mustermann, COO Beispiel GmbH</p>
+            </div>
+            <div class="bg-gray-50 dark:bg-gray-700/50 p-6 rounded-lg shadow-md">
+              <p class="text-gray-600 dark:text-gray-300 italic">\"Professionell, effizient und zukunftsorientiert. Die Zusammenarbeit war ein voller Erfolg.\"</p>
+              <p class="mt-4 font-semibold text-gray-700 dark:text-gray-200">- John Doe, Tech Lead Innovate AG</p>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-6">Bekannt aus & Vertraut von</h3>
+          <div class="flex flex-wrap justify-center items-center gap-8 lg:gap-12 opacity-75">
+            <img src="https://via.placeholder.com/120x60?text=Logo+1" alt="Kundenlogo 1" class="h-10 lg:h-12"/>
+            <img src="https://via.placeholder.com/120x60?text=Logo+2" alt="Kundenlogo 2" class="h-10 lg:h-12"/>
+            <img src="https://via.placeholder.com/120x60?text=Logo+3" alt="Kundenlogo 3" class="h-10 lg:h-12"/>
+            <img src="https://via.placeholder.com/120x60?text=Logo+4" alt="Kundenlogo 4" class="h-10 lg:h-12"/>
+          </div>
+        </div>
+        -->
+        <!-- ENDE: Vertrauenselemente -->
+
+        <!-- Alternative Kontaktoptionen & Kontaktinformationen kombinierter Abschnitt -->
+        <div class="mt-16 pt-12 border-t border-gray-200 dark:border-gray-700">
+          <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200">Weitere Kontaktmöglichkeiten</h2>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+            <!-- Linke Spalte: Direkte Buttons -->
+            <div class="space-y-6">
+              <div class="text-center md:text-left">
+                <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-3">Direkt handeln</h3>
+              </div>
+              <div>
+                <a 
+                  href="#"  // Platzhalter für Calendly-Link
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="w-full inline-flex items-center justify-center px-6 py-3.5 border border-transparent text-base font-medium rounded-lg text-white bg-green-600 hover:bg-green-700 transition-colors shadow-md hover:shadow-lg transform hover:scale-105"
+                >
+                  <svg class="w-5 h-5 mr-2 -ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" /></svg>
+                  Beratungstermin buchen
+                </a>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 text-center md:text-left">Via Calendly</p>
+              </div>
+              <div>
+                <a 
+                  href="tel:+436641383800" 
+                  class="w-full inline-flex items-center justify-center px-6 py-3.5 border border-transparent text-base font-medium rounded-lg text-white bg-sky-600 hover:bg-sky-700 transition-colors shadow-md hover:shadow-lg transform hover:scale-105"
+                >
+                  <svg class="w-5 h-5 mr-2 -ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
+                  Jetzt anrufen
+                </a>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 text-center md:text-left">+43 664 1383800</p>
+              </div>
+              <div>
+                <a 
+                  href="#"  // Platzhalter für WhatsApp/Messenger
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="w-full inline-flex items-center justify-center px-6 py-3.5 border border-gray-300 dark:border-gray-600 text-base font-medium rounded-lg text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors shadow-md hover:shadow-lg transform hover:scale-105"
+                >
+                  <svg class="w-5 h-5 mr-2 -ml-1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943s-.08-.159-.197-.258z"/></svg>
+                  Schnellanfrage
+                </a>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1.5 text-center md:text-left">Via WhatsApp/Messenger</p>
+              </div>
+            </div>
+
+            <!-- Rechte Spalte: Kontaktinformationen -->
+            <div class="space-y-5">
+              <div class="text-center md:text-left">
+                 <h3 class="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-3">Unsere Kontaktdaten</h3>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800 dark:text-gray-200">Adresse</h4>
+                <p class="text-gray-600 dark:text-gray-400 mt-1">
+                  <!-- TODO: ECHTE ADRESSE EINTRAGEN -->
+                  Be Automated GmbH<br />
+                  Seilergasse 4<br />
+                  2221 Groß-Schweinbarth, Österreich
+                </p>
+                <p class="text-gray-600 dark:text-gray-400 mt-1">
+                  <a href="#" class="text-orange-600 hover:underline">Auf Google Maps anzeigen</a> <!-- TODO: ECHTEN GOOGLE MAPS LINK EINFÜGEN -->
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800 dark:text-gray-200 mt-3">Geschäftszeiten</h4>
+                <p class="text-gray-600 dark:text-gray-400 mt-1">
+                  <!-- TODO: ECHTE GESCHÄFTSZEITEN EINTRAGEN -->
+                  Montag - Freitag: 10:00 - 17:00 Uhr
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800 dark:text-gray-200">E-Mail</h4>
+                <p class="text-gray-600 dark:text-gray-400 mt-1">
+                  <a href="mailto:office@beautomated.at" class="text-orange-600 hover:underline">office@beautomated.at</a>
+                </p>
+              </div>
+              <div>
+                <h4 class="font-semibold text-gray-800 dark:text-gray-200">Telefon</h4>
+                <p class="text-gray-600 dark:text-gray-400 mt-1">
+                  <a href="tel:+436641383800" class="text-orange-600 hover:underline">+43 664 1383800</a>
+                </p>
+              </div>
+              <div class="pt-3">
+                <h4 class="font-semibold text-gray-800 dark:text-gray-200 mb-2">Folgen Sie uns</h4>
+                <div class="flex space-x-4 justify-center md:justify-start">
+                  <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors">
+                    <span class="sr-only">LinkedIn</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors">
+                    <span class="sr-only">Facebook</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors">
+                    <span class="sr-only">Instagram</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.359 2.618 6.78 6.98 6.98 1.28.059 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.072-4.948-.072zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors">
+                    <span class="sr-only">TikTok</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.47.02-4.8-.73-6.66-2.31-1.52-1.29-2.36-3.02-2.56-4.87-.08-1.03-.04-2.07.03-3.1.08-1.13.39-2.24.86-3.26.47-1.01 1.09-1.91 1.85-2.68.75-.78 1.65-1.39 2.63-1.82.99-.42 2.06-.63 3.14-.67.08-1.53.63-3.09 1.75-4.17 1.12-1.11 2.7-1.62 4.24-1.79V.02zM10 15.21c.01-.2.01-.39.01-.59 0-1.21-.12-2.41-.23-3.61-.22-2.41-.86-4.66-2.26-6.51-1.01-1.33-2.4-2.28-3.95-2.75-.22-.07-.43-.16-.64-.23-.05.34-.09.68-.09 1.03.02.79.07 1.57.14 2.35.09.98.26 1.95.52 2.89.26.95.63 1.85 1.12 2.69.49.84 1.1 1.59 1.83 2.23.73.63 1.56 1.16 2.47 1.54.91.38 1.89.56 2.87.56.04 0 .09-.01.13-.01z"/></svg>
+                  </a>
+                  <a href="#" class="text-gray-400 hover:text-orange-500 transition-colors">
+                    <span class="sr-only">Twitter</span>
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723 10.054 10.054 0 01-3.127 1.184c-.9-.96-2.18-1.56-3.59-1.56-2.723 0-4.927 2.214-4.927 4.93 0 .39.044.765.127 1.124C7.69 8.094 4.067 6.13 1.64 3.16c-.427.74-.666 1.6-.666 2.518 0 1.71.87 3.214 2.19 4.093-.8-.026-1.55-.248-2.207-.616v.06c0 2.39 1.7 4.38 3.952 4.835-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 004.6 3.42c-1.68 1.32-3.8 2.105-6.105 2.105-.398 0-.79-.023-1.175-.068 2.18 1.405 4.768 2.22 7.548 2.22 9.054 0 14-7.496 14-13.986 0-.21 0-.42-.015-.63A9.936 9.936 0 0024 4.59l-.047-.02z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- NEU: FAQ-Bereich -->
+        <div class="mt-16 pt-12 border-t border-gray-200 dark:border-gray-700">
+          <div class="text-center mb-10">
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-gray-200">Häufig gestellte Fragen (FAQ)</h2>
+          </div>
+          <div class="max-w-3xl mx-auto space-y-6">
+            <!-- FAQ 1 (Platzhalter) -->
+            <details class="group bg-gray-50 dark:bg-gray-800/80 p-4 sm:p-5 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 cursor-pointer">
+              <summary class="flex justify-between items-center font-semibold text-gray-800 dark:text-gray-200 text-lg">
+                Welche Arten von Prozessen können automatisiert werden?
+                <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 group-open:rotate-180 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <p class="mt-3 text-gray-600 dark:text-gray-300">
+                Grundsätzlich können viele repetitive, regelbasierte Aufgaben in Marketing, Vertrieb, Kundenservice, HR und IT automatisiert werden. Kontaktieren Sie uns für eine individuelle Analyse Ihrer Prozesse.
+              </p>
+            </details>
+            <!-- FAQ 2 (Platzhalter) -->
+            <details class="group bg-gray-50 dark:bg-gray-800/80 p-4 sm:p-5 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 cursor-pointer">
+              <summary class="flex justify-between items-center font-semibold text-gray-800 dark:text-gray-200 text-lg">
+                Wie lange dauert die Implementierung einer Automatisierungslösung?
+                <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 group-open:rotate-180 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <p class="mt-3 text-gray-600 dark:text-gray-300">
+                Die Dauer hängt von der Komplexität der Prozesse ab. Kleinere Automatisierungen können oft innerhalb weniger Tage oder Wochen umgesetzt werden, während größere Projekte mehr Zeit in Anspruch nehmen können.
+              </p>
+            </details>
+            <!-- FAQ 3 (Platzhalter) -->
+            <details class="group bg-gray-50 dark:bg-gray-800/80 p-4 sm:p-5 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 cursor-pointer">
+              <summary class="flex justify-between items-center font-semibold text-gray-800 dark:text-gray-200 text-lg">
+                Was kostet die Prozessautomatisierung?
+                <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 group-open:rotate-180 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <p class="mt-3 text-gray-600 dark:text-gray-300">
+                Die Kosten sind projektspezifisch. Wir bieten transparente Preismodelle und erstellen Ihnen gerne ein individuelles Angebot nach einer kostenlosen Erstberatung und Prozessanalyse.
+              </p>
+            </details>
+            <!-- FAQ 4 (Platzhalter) -->
+            <details class="group bg-gray-50 dark:bg-gray-800/80 p-4 sm:p-5 rounded-lg shadow-sm border border-gray-200 dark:border-gray-700 cursor-pointer">
+              <summary class="flex justify-between items-center font-semibold text-gray-800 dark:text-gray-200 text-lg">
+                Bieten Sie auch Support nach der Implementierung?
+                <svg class="w-5 h-5 text-gray-500 dark:text-gray-400 group-open:rotate-180 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <p class="mt-3 text-gray-600 dark:text-gray-300">
+                Ja, wir bieten umfassenden Support und Wartung, um sicherzustellen, dass Ihre automatisierten Prozesse reibungslos funktionieren und bei Bedarf angepasst werden können.
+              </p>
+            </details>
+          </div>
+        </div>
+        <!-- ENDE: FAQ-Bereich -->
+
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<script>
+  // JavaScript für Turnstile
+  // Diese Funktion kann erweitert werden, um z.B. den Submit-Button zu aktivieren/deaktivieren
+  function onTurnstileSuccess(token) {
+    // console.log('Turnstile success:', token);
+    // Hier könnten Sie Logik hinzufügen, falls das Formular erst nach erfolgreichem Captcha absendbar sein soll.
+    // Da das Formular aber direkt an n8n geht, ist die serverseitige Prüfung wichtiger.
+    // Die 'cf-turnstile-response' wird automatisch zum Formular hinzugefügt.
+    document.getElementById('turnstile-message').textContent = ''; // Nachricht löschen bei Erfolg
+  }
+
+  // Optional: Funktion um den Submit Button zu steuern, bis Turnstile geladen ist oder fehlschlägt
+  // window.onloadTurnstileCallback = function () {
+  //     const submitButton = document.querySelector('form button[type="submit"]');
+  //     if (submitButton) {
+  //         // Initial deaktivieren oder prüfen ob Turnstile Widget gerendert wurde
+  //     }
+  // };
+
+  // Überprüfen, ob das Formular abgesendet werden kann, wenn Turnstile eine Fehlermeldung anzeigt
+  const form = document.querySelector('form[action*="n8n"]');
+  if (form) {
+    form.addEventListener('submit', function(event) {
+      const turnstileResponse = form.querySelector('[name="cf-turnstile-response"]');
+      if (!turnstileResponse || !turnstileResponse.value) {
+        // console.error('Turnstile-Token fehlt.');
+        document.getElementById('turnstile-message').textContent = 'Bitte bestätigen Sie, dass Sie kein Roboter sind.';
+        event.preventDefault(); // Verhindert das Absenden des Formulars
+      } else {
+        document.getElementById('turnstile-message').textContent = '';
+      }
+    });
+  }
+</script>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+
+<style>
+  /* Floating Label Specific CSS (peer-[:not(:placeholder-shown)] in Tailwind handles some of this) */
+  .peer:focus ~ label,
+  .peer:not(:placeholder-shown) ~ label {
+    @apply transform -translate-y-6 scale-75 top-2 z-10;
+  }
+  .peer-placeholder-shown ~ label {
+     @apply cursor-text top-1/2 -translate-y-1/2;
+  }
+
+  /* Konsistentes Styling für Select-Pfeil im Dark Mode */
+  @media (prefers-color-scheme: dark) {
+    select {
+      background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%239CA3AF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E') !important;
+    }
+  }
+</style>

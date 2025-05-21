@@ -1,0 +1,20 @@
+---
+const { title, date, summary, image, author } = Astro.props;
+---
+
+<article class="max-w-3xl mx-auto py-12 px-4">
+  {image && (
+    <img src={image} alt={title} class="w-full rounded-xl mb-8 shadow-md object-cover aspect-video" loading="eager" />
+  )}
+  <header class="mb-8">
+    <h1 class="text-3xl md:text-4xl font-extrabold mb-2 text-gray-900 dark:text-white">{title}</h1>
+    <div class="flex flex-wrap items-center gap-4 text-gray-500 dark:text-gray-400 text-sm">
+      <span>{date instanceof Date ? date.toLocaleDateString('de-DE', { year: 'numeric', month: 'long', day: 'numeric' }) : date}</span>
+      {author && <span>• Von {author}</span>}
+    </div>
+    {summary && <p class="mt-4 text-lg text-gray-700 dark:text-gray-300">{summary}</p>}
+  </header>
+  <div class="prose prose-lg max-w-none dark:prose-invert">
+    <slot />
+  </div>
+</article> 

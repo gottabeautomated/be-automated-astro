@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import LeadForm from '../components/ReactIsland/LeadForm';
+---
+
+<BaseLayout
+  title="Kostenloses E-Book - Be Automated"
+  description="Hol dir unser kostenloses E-Book 'Automatisierung für Einsteiger' und lerne, wie du deine ersten Prozesse automatisieren kannst."
+>
+  <section class="py-16">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <div class="text-center mb-12">
+        <h1 class="text-3xl font-bold mb-4">Automatisierung für Einsteiger</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          Erhalte unser kostenloses E-Book und lerne, wie du deine ersten Geschäftsprozesse automatisieren kannst.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Linke Spalte: E-Book-Vorschau -->
+        <div>
+          <div class="bg-gray-100 p-4 rounded-lg aspect-[3/4] flex items-center justify-center mb-6">
+            <div class="text-center text-gray-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+              <p>E-Book: Automatisierung für Einsteiger</p>
+            </div>
+          </div>
+          
+          <h3 class="text-xl font-bold mb-3">Was dich erwartet:</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Grundlagen der Prozessautomatisierung</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Die 3 häufigsten Fehler bei der Automatisierung</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Schritt-für-Schritt-Anleitung für deine ersten Workflows</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Die besten Tools für Einsteiger</span>
+            </li>
+            <li class="flex items-start">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span>Erfolgsbeispiele aus der Praxis</span>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Rechte Spalte: React-Komponente für das Formular -->
+        <div>
+          <LeadForm client:load />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout> 

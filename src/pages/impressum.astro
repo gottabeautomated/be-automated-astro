@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "Impressum - Be Automated";
+const pageDescription = "Impressum der Be Automated GmbH. Alle rechtlichen Informationen und Kontaktdaten.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <section class="py-12 md:py-20 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+      <div class="bg-white dark:bg-gray-900 shadow-xl rounded-lg p-6 md:p-10">
+        <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-8 border-b pb-4 dark:border-gray-700">
+          Impressum
+        </h1>
+
+        <div class="prose prose-lg dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 space-y-6">
+          <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 !mb-3 !mt-0">Angaben gemäß § 5 E-Commerce-Gesetz (ECG)</h2>
+          <p>
+            <strong>Be Automated GmbH</strong><br />
+            Seilergasse 4<br />
+            2221 Groß-Schweinbarth<br />
+            Österreich
+          </p>
+
+          <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 !mb-3 !mt-6">Kontakt:</h2>
+          <p>
+            Telefon: +436641383800<br />
+            E-Mail: office@beautomated.at
+          </p>
+
+          <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 !mb-3 !mt-6">Weitere Angaben:</h2>
+          <p>
+            Geschäftsführer: Jonas Behrmann<br />
+            Firmenbuchnummer: [FN-Nummer]<br />
+            Firmenbuchgericht: [Zuständiges Gericht]<br />
+            UID-Nummer: [UID-Nummer]
+          </p>
+
+          <p>
+            Mitglied der Wirtschaftskammer [Bundesland]<br />
+            Anwendbare Rechtsvorschriften: <a href="http://www.ris.bka.gv.at" target="_blank" rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 dark:text-orange-400 dark:hover:text-orange-500 underline">www.ris.bka.gv.at</a><br />
+            Berufsbezeichnung: [Angabe falls zutreffend]
+          </p>
+          
+          <p>
+            Aufsichtsbehörde: [Angabe falls zutreffend]<br />
+            Berufsrechtliche Vorschriften: [Angabe falls zutreffend]
+          </p>
+
+          <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 !mb-3 !mt-6">Angaben zur Online-Streitbeilegung:</h2>
+          <p>
+            Die EU-Kommission stellt eine Plattform für die außergerichtliche Online-Streitbeilegung (OS-Plattform) bereit, aufrufbar unter <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" class="text-orange-600 hover:text-orange-700 dark:text-orange-400 dark:hover:text-orange-500 underline">https://ec.europa.eu/consumers/odr</a>.
+          </p>
+          <p>
+            Wir sind weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+          </p>
+
+          <h2 class="text-xl font-semibold text-gray-800 dark:text-gray-200 !mb-3 !mt-6">Haftungshinweis:</h2>
+          <p>
+            Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout> 

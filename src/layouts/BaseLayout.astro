@@ -1,0 +1,104 @@
+---
+import "../styles/design.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+const {
+  title = "Be Automated - Wir machen einfach einfach",
+  description = "Automatisiere deine Prozesse und fokussiere dich auf das, was wirklich wichtig ist.",
+  image = "/images/social-default.webp"
+} = Astro.props;
+
+const url = Astro.url?.href || '';
+---
+
+<html lang="de" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Canonical URL -->
+    <link rel="canonical" href={url} />
+    <!-- OpenGraph Meta -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content={url} />
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- AOS Animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    
+    <!-- Alpine.js für das mobile Burgermenu -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    
+    <!-- Initial Dark Mode Script - runs before page load to prevent flash -->
+    <script is:inline>
+      // Sofort ausgeführtes Script für Dark Mode
+      (function() {
+        // Überprüft localStorage oder System-Preference und setzt das entsprechende Theme
+        const darkModeEnabled = (() => {
+          const savedTheme = localStorage.getItem('theme');
+          
+          if (savedTheme) {
+            return savedTheme === 'dark';
+          }
+          
+          return window.matchMedia('(prefers-color-scheme: dark)').matches;
+        })();
+        
+        // Speichere das Theme für zukünftige Seitenaufrufe
+        localStorage.setItem('theme', darkModeEnabled ? 'dark' : 'light');
+        
+        // Setze die Klasse auf dem <html> Element
+        if (darkModeEnabled) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+        
+        console.log('Initial theme set to:', darkModeEnabled ? 'dark' : 'light');
+      })();
+    </script>
+  </head>
+  <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans min-h-screen flex flex-col transition-colors duration-300">
+    <Header />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+    
+    <!-- AOS Animation Script -->
+    <script is:inline src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(() => {
+          AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true,
+            disable: 'mobile',
+            offset: 50
+          });
+        }, 100);
+      });
+    </script>
+  </body>
+</html> 

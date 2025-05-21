@@ -1,0 +1,153 @@
+---
+---
+<div class="py-16 bg-gray-50 dark:bg-gray-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">
+        Unser Vorgehen
+      </h2>
+      <p class="mt-4 text-lg text-gray-600 dark:text-gray-300">
+        Ein strukturierter Prozess für maximale Effizienz und nachhaltige Ergebnisse
+      </p>
+    </div>
+
+    <div class="mt-16" x-data="{ activeStep: 1 }">
+      <!-- Timeline -->
+      <div class="relative">
+        <!-- Progress Bar -->
+        <div class="absolute top-1/2 left-0 w-full h-1 bg-gray-200 dark:bg-gray-700">
+          <div class="h-full bg-blue-600 transition-all duration-500"
+               :style="'width: ' + ((activeStep - 1) * 25) + '%'">
+          </div>
+        </div>
+
+        <!-- Steps -->
+        <div class="relative flex justify-between">
+          {[1, 2, 3, 4, 5].map((step) => (
+            <div class="flex flex-col items-center">
+              <!-- Step Circle -->
+              <button
+                @click={`activeStep = ${step}`}
+                class="w-12 h-12 rounded-full border-4 border-white dark:border-gray-800 bg-white dark:bg-gray-800 flex items-center justify-center transition-all duration-300"
+                :class={`activeStep >= ${step} ? 'border-blue-600 dark:border-blue-500' : 'border-gray-200 dark:border-gray-700'`}
+              >
+                <span class="text-lg font-semibold" :class={`activeStep >= ${step} ? 'text-blue-600 dark:text-blue-500' : 'text-gray-400 dark:text-gray-500'`}>
+                  {step}
+                </span>
+              </button>
+              <!-- Step Image -->
+              <div class="mt-4 w-24 h-24 relative">
+                <img
+                  :src={`'${  `/images/timeline/timeline-step-${step}.png`  }'`}
+                  :alt={`'Schritt ${step}'`}
+                  class="w-full h-full object-contain transition-all duration-300"
+                  :class={`activeStep === ${step} ? 'scale-110' : 'opacity-50'`}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="mt-16">
+        {[
+          {
+            title: "Analyse & Assessment",
+            description: "Wir analysieren Ihre aktuellen Prozesse und identifizieren Optimierungspotenziale.",
+            details: [
+              "Detaillierte Prozessanalyse",
+              "Identifikation von Engpässen",
+              "Potenzialabschätzung"
+            ]
+          },
+          {
+            title: "Konzeption & Planung",
+            description: "Gemeinsam entwickeln wir eine maßgeschneiderte Automatisierungsstrategie.",
+            details: [
+              "Technologieauswahl",
+              "Ressourcenplanung",
+              "Zeitplanung"
+            ]
+          },
+          {
+            title: "Implementierung",
+            description: "Schrittweise Umsetzung der Automatisierungslösungen.",
+            details: [
+              "Modulare Entwicklung",
+              "Regelmäßige Tests",
+              "Anpassungen nach Feedback"
+            ]
+          },
+          {
+            title: "Integration & Training",
+            description: "Nahtlose Einbindung in bestehende Systeme und Schulung der Mitarbeiter.",
+            details: [
+              "Systemintegration",
+              "Mitarbeiterschulung",
+              "Dokumentation"
+            ]
+          },
+          {
+            title: "Optimierung & Support",
+            description: "Kontinuierliche Verbesserung und langfristiger Support.",
+            details: [
+              "Performance-Monitoring",
+              "Regelmäßige Updates",
+              "Technischer Support"
+            ]
+          }
+        ].map((step, index) => (
+          <div
+            x-show={`activeStep === (${index} + 1)`}
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 transform translate-y-4"
+            x-transition:enter-end="opacity-100 transform translate-y-0"
+            class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8"
+          >
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              {step.title}
+            </h3>
+            <p class="text-gray-600 dark:text-gray-300 mb-6">
+              {step.description}
+            </p>
+            <ul class="space-y-3">
+              {step.details.map((detail) => (
+                <li class="flex items-center text-gray-600 dark:text-gray-300">
+                  <svg class="w-5 h-5 text-blue-600 dark:text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  {detail}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <!-- Navigation -->
+      <div class="mt-8 flex justify-between">
+        <button
+          @click="activeStep = Math.max(1, activeStep - 1)"
+          class="px-6 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+          :disabled="activeStep === 1"
+          :class="activeStep === 1 ? 'opacity-50 cursor-not-allowed' : ''"
+        >
+          Zurück
+        </button>
+        <button
+          @click="activeStep = Math.min(5, activeStep + 1)"
+          class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+          :disabled="activeStep === 5"
+          :class="activeStep === 5 ? 'opacity-50 cursor-not-allowed' : ''"
+        >
+          Weiter
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Alpine.js wird bereits global importiert
+</script> 

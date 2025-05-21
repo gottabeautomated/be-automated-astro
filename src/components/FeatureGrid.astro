@@ -1,0 +1,158 @@
+---
+// Die Features können später aus einer Datenquelle kommen (z.B. CMS, Markdown etc.)
+const features = [
+  {
+    title: "Workflow-Automatisierung",
+    description: "Wir automatisieren wiederkehrende Arbeitsabläufe, damit du dich auf strategische Aufgaben konzentrieren kannst.",
+    icon: "⚙️"
+  },
+  {
+    title: "Prozessoptimierung",
+    description: "Wir analysieren deine bestehenden Prozesse und optimieren sie für maximale Effizienz und Produktivität.",
+    icon: "📈"
+  },
+  {
+    title: "Integrationen",
+    description: "Wir verbinden deine verschiedenen Tools und Systeme miteinander für einen nahtlosen Datenaustausch.",
+    icon: "🔄"
+  },
+  {
+    title: "Angepasste Lösungen",
+    description: "Wir entwickeln maßgeschneiderte Automatisierungslösungen, die genau auf deine Geschäftsanforderungen zugeschnitten sind.",
+    icon: "✨"
+  },
+  {
+    title: "Chatbot-Entwicklung",
+    description: "Wir erstellen intelligente Chatbots, die deine Kunden rund um die Uhr betreuen und häufige Anfragen automatisch beantworten.",
+    icon: "💬"
+  },
+  {
+    title: "Datenanalyse",
+    description: "Wir helfen dir, deine Daten zu analysieren und wertvolle Erkenntnisse für fundierte Geschäftsentscheidungen zu gewinnen.",
+    icon: "📊"
+  }
+];
+
+import Card from './Card.astro';
+---
+
+<section class="py-24 bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
+  <div class="container mx-auto px-6">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-4xl font-bold mb-3 dark:text-white">
+        <span class="text-[#c2783c] dark:text-[#d38545]">🔧</span> Was wir machen
+      </h2>
+      <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+        Unsere Lösungen decken alle Bereiche der digitalen Automatisierung ab
+      </p>
+    </div>
+
+    <!-- Systeme & Automatisierung Kategorie -->
+    <div class="mb-12">
+      <h3 class="text-xl font-bold text-[#c2783c] dark:text-[#d38545] mb-6">Systeme & Automatisierung</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <!-- Feature 1: KI-gestützte Automatisierung -->
+        <Card hoverEffect="copper">
+          <h4 class="text-lg font-bold mb-2 flex items-center dark:text-white">
+            <span class="text-[#c2783c] dark:text-[#d38545] inline-block w-6 h-6 mr-3 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </span>
+            KI-gestützte Automatisierung
+          </h4>
+          <p class="text-gray-600 dark:text-gray-300 pl-9">Intelligente E-Mail-Antworten, Workflows & Chatbots – automatisiert mit n8n, Zapier & Co.</p>
+        </Card>
+        
+        <!-- Feature 2: Custom AI-Systeme -->
+        <Card hoverEffect="copper">
+          <h4 class="text-lg font-bold mb-2 flex items-center dark:text-white">
+            <span class="text-[#c2783c] dark:text-[#d38545] inline-block w-6 h-6 mr-3 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+            </span>
+            Custom AI-Systeme
+          </h4>
+          <p class="text-gray-600 dark:text-gray-300 pl-9">DSGVO-konform, selbst gehostet – maximale Kontrolle & Sicherheit.</p>
+        </Card>
+        
+        <!-- Feature 3: CRM & Lead-Automation -->
+        <Card hoverEffect="copper">
+          <h4 class="text-lg font-bold mb-2 flex items-center dark:text-white">
+            <span class="text-[#c2783c] dark:text-[#d38545] inline-block w-6 h-6 mr-3 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </span>
+            CRM & Lead-Automation
+          </h4>
+          <p class="text-gray-600 dark:text-gray-300 pl-9">Kundendaten strukturieren, Follow-ups automatisieren & nie wieder Leads verlieren.</p>
+        </Card>
+      </div>
+    </div>
+    
+    <!-- Kommunikation & Inhalte Kategorie -->
+    <div>
+      <h3 class="text-xl font-bold text-[#c2783c] dark:text-[#d38545] mb-6">Kommunikation & Inhalte</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <!-- Feature 4: Digitale Assistenten -->
+        <Card hoverEffect="copper">
+          <h4 class="text-lg font-bold mb-2 flex items-center dark:text-white">
+            <span class="text-[#c2783c] dark:text-[#d38545] inline-block w-6 h-6 mr-3 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <line x1="12" y1="19" x2="12" y2="23"></line>
+                <line x1="8" y1="23" x2="16" y2="23"></line>
+              </svg>
+            </span>
+            Digitale Assistenten
+          </h4>
+          <p class="text-gray-600 dark:text-gray-300 pl-9">z.B. für Hochzeitsplanung, Vertrieb oder Kundenservice – persönliche, smarte Helfer wie "WILMA".</p>
+        </Card>
+        
+        <!-- Feature 5: Content-Strategie mit KI -->
+        <Card hoverEffect="copper">
+          <h4 class="text-lg font-bold mb-2 flex items-center dark:text-white">
+            <span class="text-[#c2783c] dark:text-[#d38545] inline-block w-6 h-6 mr-3 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </span>
+            Content-Strategie mit KI
+          </h4>
+          <p class="text-gray-600 dark:text-gray-300 pl-9">Videos, Blogposts & SEO-Inhalte effizient automatisieren & veröffentlichen.</p>
+        </Card>
+        
+        <!-- Feature 6: Medienmanagement -->
+        <Card hoverEffect="copper">
+          <h4 class="text-lg font-bold mb-2 flex items-center dark:text-white">
+            <span class="text-[#c2783c] dark:text-[#d38545] inline-block w-6 h-6 mr-3 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <polyline points="21 15 16 10 5 21"></polyline>
+              </svg>
+            </span>
+            Medienmanagement
+          </h4>
+          <p class="text-gray-600 dark:text-gray-300 pl-9">Bilder, Videos und Dokumente intelligent organisieren, bearbeiten und bereitstellen.</p>
+        </Card>
+      </div>
+    </div>
+  </div>
+</section> 

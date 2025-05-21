@@ -1,16 +1,34 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import FeatureGrid from '../components/FeatureGrid.astro';
+import ZwetschkeFeatures from '../components/ZwetschkeFeatures.astro';
+import TargetGroups from '../components/TargetGroups.astro';
+import ZwetschkeTargetGroups from '../components/ZwetschkeTargetGroups.astro';
+import BusinessStyle from '../components/BusinessStyle.astro';
+import ContactCTA from '../components/ContactCTA.astro';
+import Timeline from '../../components/Timeline.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout 
+	title="Be Automated - Wir machen einfach einfach."
+	description="Be Automated ist deine spezialisierte Agentur für Automatisierung, Digitalisierung und KI. Wir vereinfachen Prozesse, sparen Zeit und entlasten Menschen."
+>
+	<Hero />
+	
+	<!-- Alte Feature Grid Komponente -->
+	<!-- <FeatureGrid /> -->
+	
+	<!-- Neue Zwetschke Features Komponente -->
+	<ZwetschkeFeatures />
+	
+	<!-- Alte TargetGroups Komponente -->
+	<!-- <TargetGroups /> -->
+	
+	<!-- Neue ZwetschkeTargetGroups Komponente -->
+	<ZwetschkeTargetGroups />
+	
+	<BusinessStyle />
+	
+	<ContactCTA />
+</BaseLayout>

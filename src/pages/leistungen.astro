@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceCard from '../components/services/ServiceCard.astro';
+import ContactCTA from '../components/services/ContactCTA.astro';
+import Timeline from '../components/Timeline.astro';
+import ProzessDetailKarten from '../components/ProzessDetailKarten.astro';
+
+// Services-Daten
+const services = [
+  {
+    title: "Prozessautomatisierung",
+    description: "Wir digitalisieren repetitive Abläufe – für 70% Zeitersparnis und minimale Fehlerquoten",
+    image: "/images/services/process-icon.png",
+    color: "from-[#c2783c]/80 to-orange-600/80",
+    anchor: "#prozessautomatisierung"
+  },
+  {
+    title: "KI-Implementierung",
+    description: "Intelligente Systeme, die aus Ihren Daten lernen und Entscheidungen automatisieren",
+    image: "/images/services/ki-icon.png",
+    color: "from-indigo-600 to-purple-700",
+    anchor: "#ki-implementierung"
+  },
+  {
+    title: "Datenanalyse & BI",
+    description: "Von Rohdaten zu interaktiven Echtzeit-Dashboards mit prädiktiven Analysen",
+    image: "/images/services/daten-icon.png",
+    color: "from-sky-500 to-blue-700",
+    anchor: "#datenanalyse"
+  },
+  {
+    title: "Workflow-Optimierung",
+    description: "Nahtlos vernetzte Systeme mit 90% weniger manuellen Eingriffen",
+    image: "/images/services/workflow-icon.png",
+    color: "from-emerald-500 to-green-700",
+    anchor: "#workflow-optimierung"
+  }
+];
+---
+<BaseLayout title="Leistungen - Be Automated" description="Entdecken Sie unsere Automatisierungs- und KI-Lösungen.">
+  <section class="py-16 md:py-24 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-gray-100">Unsere Leistungen</h1>
+        <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+          Wir verwandeln komplexe Herausforderungen in einfache, automatisierte Lösungen, die Ihr Unternehmen voranbringen.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        {services.map(service => (
+          <ServiceCard {...service} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <ProzessDetailKarten ueberschrift="Automatisierungslösungen im Detail" />
+
+  <Timeline />
+  <ContactCTA />
+</BaseLayout>
+
+<style>
+  .services-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+  .services-subline {
+    text-align: center;
+    color: #bdbdbd;
+    margin-bottom: 2.5rem;
+    font-size: 1.15rem;
+  }
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  @media (min-width: 700px) {
+    .services-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  }
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  /* Entferne alle farbigen Abschnitt-Hintergründe im Dark Mode */
+  @media (prefers-color-scheme: dark) {
+    #prozessautomatisierung,
+    #ki-implementierung,
+    #datenanalyse,
+    #workflow-optimierung {
+      background: transparent !important;
+    }
+  }
+</style>
+<style>
+html {
+  scroll-behavior: smooth;
+}
+</style>
+
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script> 

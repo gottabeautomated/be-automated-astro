@@ -1,0 +1,331 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { Picture } from 'astro:assets'; // Für Bilder in Testimonials etc.
+
+// Lokale Icon Komponenten importieren
+import TimerBold from '../components/icons/TimerBold.astro';
+import ShieldCheckBold from '../components/icons/ShieldCheckBold.astro';
+import SmileyBold from '../components/icons/SmileyBold.astro';
+import ChartLineUpBold from '../components/icons/ChartLineUpBold.astro';
+import WrenchBold from '../components/icons/WrenchBold.astro';
+import ShoppingCartBold from '../components/icons/ShoppingCartBold.astro';
+import FactoryBold from '../components/icons/FactoryBold.astro';
+import UsersThreeBold from '../components/icons/UsersThreeBold.astro';
+import StorefrontBold from '../components/icons/StorefrontBold.astro';
+import BankBold from '../components/icons/BankBold.astro';
+
+// Daten für Key Performance Highlights
+const keyHighlights = [
+  { value: "72%", label: "durchschnittliche Zeitersparnis", icon: TimerBold },
+  { value: "94%", label: "Fehlerreduktion in kritischen Prozessen", icon: ShieldCheckBold },
+  { value: "+65%", label: "höhere Mitarbeiterzufriedenheit", icon: SmileyBold },
+  { value: "2-8", label: "Monate typische Amortisationszeit", unit: "Monate", icon: ChartLineUpBold }
+];
+
+// Daten für Featured Case Studies
+const featuredCaseStudies = [
+  {
+    title: "Handwerksbetrieb revolutioniert Auftragsabwicklung",
+    image: "https://via.placeholder.com/600x400.png?text=Handwerk+Vorher/Nachher", // Platzhalter
+    situation: "15-Personen Handwerksbetrieb mit 20+ Aufträgen täglich. Manuelle Auftragserfassung, Materialkalkulation und Nachverfolgung führten zu 12+ Stunden Verwaltungsaufwand pro Woche.",
+    solution: "Vollautomatisierte Auftragsstrecke mit digitaler Erfassung, automatischer Materialkalkulation und Echtzeit-Statusverfolgung.",
+    results: [
+      { value: "85%", text: "weniger manuelle Dateneingabe" },
+      { value: "25 auf 7 Min.", text: "Auftragsbearbeitung reduziert" },
+      { value: "92%", text: "Fehlerquote bei Materialbestellung gesunken" },
+      { value: "4,5 Monate", text: "ROI erreicht" }
+    ],
+    icon: WrenchBold
+  },
+  {
+    title: "E-Commerce-Unternehmen automatisiert Kundenservice",
+    image: "https://via.placeholder.com/600x400.png?text=E-Commerce+Support", // Platzhalter
+    situation: "Wachsendes E-Commerce-Unternehmen mit 800+ Kundenanfragen täglich. 4 Vollzeit-Mitarbeiter verbrachten 70% ihrer Zeit mit repetitiven Anfragen.",
+    solution: "KI-basiertes Ticketsystem mit automatischer Kategorisierung und Beantwortung von Standardanfragen. Integration in Bestandssysteme.",
+    results: [
+      { value: "68%", text: "aller Anfragen automatisch beantwortet" },
+      { value: "6.2h auf 12 Min.", text: "Durchschnittliche Antwortzeit reduziert" },
+      { value: "2", text: "Mitarbeiter für strategische Projekte freigestellt" },
+      { value: "+32%", text: "Kundenzufriedenheit gestiegen" }
+    ],
+    icon: ShoppingCartBold
+  },
+  {
+    title: "Fertigung automatisiert Qualitätskontrolle",
+    image: "https://via.placeholder.com/600x400.png?text=Fertigung+Qualit%C3%A4tskontrolle", // Platzhalter
+    situation: "Mittelständischer Fertigungsbetrieb mit manueller Qualitätsprüfung. Jährliche Fehlerkosten: 380.000€.",
+    solution: "Computer-Vision-System zur automatischen Erkennung von Produktmängeln, verbunden mit automatisiertem Reporting.",
+    results: [
+      { value: "76% auf 98%", text: "Fehlererkennungsrate gesteigert" },
+      { value: "5x schneller", text: "Qualitätsprüfung als manuelle Inspektion" },
+      { value: "73%", text: "weniger Kundenreklamationen" },
+      { value: "275.000€", text: "Geschätzte Einsparung im ersten Jahr" }
+    ],
+    icon: FactoryBold
+  }
+];
+
+// Daten für Industrie-spezifische Erfolge
+const industrySuccesses = [
+  {
+    industry: "Dienstleistungsunternehmen",
+    icon: UsersThreeBold,
+    examples: [
+      "Automatisierung der Zeiterfassung und Rechnungsstellung: 15 Stunden pro Woche eingespart",
+      "KI-gestützte Präsenzplanung: 26% verbesserte Ressourcennutzung"
+    ]
+  },
+  {
+    industry: "E-Commerce",
+    icon: StorefrontBold,
+    examples: [
+      "Automatisierte Produktdatenaufbereitung: 92% schnellerer Produktlaunch",
+      "Intelligente Lagerbestandsoptimierung: Kapitalbindung um 28% reduziert"
+    ]
+  },
+  {
+    industry: "Finanzsektor",
+    icon: BankBold,
+    examples: [
+      "Automatisierte Reportgenerierung: 99,8% Fehlerfreiheit bei Compliance-Reports",
+      "KI-gestützte Risikoanalyse: 41% verbesserte Erkennungsrate von Anomalien"
+    ]
+  }
+];
+
+// Daten für Kundenstimmen
+const testimonials = [
+  {
+    quote: "Dank Be Automated haben wir nicht nur Zeit gewonnen – wir haben unsere komplette Arbeitsweise revolutioniert. Was früher Tage dauerte, läuft jetzt in Minuten ab.",
+    name: "Michaela Berger",
+    position: "Geschäftsführerin, TechCraft GmbH",
+    imgSrc: "https://via.placeholder.com/100x100.png?text=MB" // Platzhalter
+  },
+  {
+    quote: "Anfangs war ich skeptisch, ob Automatisierung für einen Betrieb unserer Größe sinnvoll ist. Heute fragen wir uns, wie wir jemals ohne auskommen konnten. Der ROI war schneller erreicht als erwartet.",
+    name: "Thomas Müller",
+    position: "Operations Manager, LogiTrans AG",
+    imgSrc: "https://via.placeholder.com/100x100.png?text=TM" // Platzhalter
+  },
+  {
+    quote: "Die Zusammenarbeit mit Be Automated war ein Gamechanger. Das Team versteht nicht nur Technologie, sondern auch die täglichen Herausforderungen im Business. Was mich am meisten beeindruckt: die messbare Zeit- und Kosteneinsparung seit Tag 1.",
+    name: "Sandra Klein",
+    position: "CTO, DataFlow Systems",
+    imgSrc: "https://via.placeholder.com/100x100.png?text=SK" // Platzhalter
+  }
+];
+
+const pageTitle = "Erfolgsgeschichten: Prozess-Revolution im echten Business";
+const pageDescription = "Entdecken Sie, wie Be Automated Unternehmen hilft, durch Prozessautomatisierung messbare Ergebnisse zu erzielen und Wettbewerbsvorteile zu schaffen.";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <div class="relative bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
+    <!-- Subtiles Hintergrundmuster -->
+    <div class="absolute inset-0 -z-10 overflow-hidden opacity-30 dark:opacity-20">
+      <svg class="absolute left-[50%] top-0 h-[64rem] w-[128rem] translate-x-[-50%] stroke-gray-400 dark:stroke-gray-700 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]" aria-hidden="true">
+        <defs><pattern id="cs-bg-pattern" width="200" height="200" x="50%" y="-1" patternUnits="userSpaceOnUse"><path d="M100 200V.5M.5 .5H200" fill="none"/></pattern></defs>
+        <rect width="100%" height="100%" stroke-width="0" fill="url(#cs-bg-pattern)"/>
+      </svg>
+    </div>
+
+    <!-- Hero-Bereich / Intro -->
+    <section class="py-20 sm:py-28 relative z-10">
+      <div class="container mx-auto px-6 text-center">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight text-gray-800 dark:text-white">
+          {pageTitle.split(': ')[0]}: <span class="text-orange-500 dark:text-orange-400" style="text-shadow: 0 0 12px currentColor;">{pageTitle.split(': ')[1]}</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          Zahlen statt Versprechen. Wir lassen die Ergebnisse unserer Kunden sprechen. Hier erfährst du, wie unsere Automatisierungslösungen echte Business-Probleme lösen und messbare Resultate liefern – branchenübergreifend und skalierbar.
+        </p>
+      </div>
+    </section>
+
+    <!-- Trenner -->
+    <div class="relative"><div class="absolute inset-0 flex items-center" aria-hidden="true"><div class="w-full border-t border-orange-300 dark:border-orange-500/30"></div></div></div>
+
+    <!-- 2. Key Performance Highlights -->
+    <section class="py-16 sm:py-24 bg-gray-50 dark:bg-gray-800/30">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          {keyHighlights.map(highlight => {
+            const IconComponent = highlight.icon; // Dynamische Komponente
+            return (
+              <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-md p-6 rounded-xl shadow-lg border border-orange-300 dark:border-orange-500/40 hover:scale-105 hover:shadow-xl transition-transform duration-300">
+                <IconComponent class="w-12 h-12 mx-auto mb-4 text-orange-500 dark:text-orange-400" />
+                <div class="text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2" style="text-shadow: 0 0 8px var(--tw-shadow-color, rgba(249,115,22,0.5));">
+                  {highlight.value}
+                  {highlight.unit && <span class="text-2xl"> {highlight.unit}</span>}
+                </div>
+                <p class="text-gray-600 dark:text-gray-200">{highlight.label}</p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+
+    <!-- Trenner -->
+    <div class="relative my-12"><div class="absolute inset-0 flex items-center" aria-hidden="true"><div class="w-full border-t border-gray-300 dark:border-gray-700"></div></div></div>
+    
+    <!-- 3. Featured Case Studies -->
+    <section class="py-16 sm:py-24 bg-white dark:bg-gray-900">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16 text-green-600 dark:text-green-400">Detaillierte Erfolgsgeschichten</h2>
+        <div class="space-y-16 lg:space-y-20">
+          {featuredCaseStudies.map((study, index) => {
+            const IconComponent = study.icon;
+            return (
+            <div class={`flex flex-col lg:flex-row gap-8 lg:gap-12 items-center p-6 sm:p-8 border border-gray-200 dark:border-gray-700 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
+              <div class="lg:w-1/2">
+                <Picture 
+                  src={study.image} 
+                  alt={`Case Study: ${study.title}`} 
+                  class="rounded-lg shadow-2xl w-full h-auto object-cover" 
+                  widths={[400,600,800]} 
+                  sizes="(max-width: 768px) 90vw, 50vw" 
+                  width={600} 
+                  height={400} 
+                />
+                <div class="mt-4 text-center text-sm text-gray-500 dark:text-gray-400 italic">
+                  Interaktiver Vorher-Nachher-Vergleich (bald verfügbar)
+                </div>
+              </div>
+              <div class="lg:w-1/2">
+                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800 dark:bg-green-700 dark:text-green-100 mb-2">
+                  <IconComponent class="mr-1.5 h-5 w-5 inline-block" /> Fallstudie
+                </span>
+                <h3 class="text-2xl font-bold text-gray-800 dark:text-white mb-3">{study.title}</h3>
+                <div class="space-y-4 text-gray-700 dark:text-gray-300">
+                  <div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Ausgangslage:</h4>
+                    <p>{study.situation}</p>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Lösung:</h4>
+                    <p>{study.solution}</p>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-800 dark:text-white mb-1">Ergebnisse:</h4>
+                    <ul class="list-disc list-inside space-y-1 pl-1">
+                      {study.results.map(result => (
+                        <li><strong class="text-green-600 dark:text-green-400">{result.value}</strong> {result.text}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div class="mt-6">
+                    <a href="#" class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                      Mehr erfahren
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+
+    <!-- Trenner -->
+    <div class="relative my-12"><div class="absolute inset-0 flex items-center" aria-hidden="true"><div class="w-full border-t border-gray-300 dark:border-gray-700"></div></div></div>
+
+    <!-- 4. Industrie-spezifische Erfolge -->
+    <section class="py-16 sm:py-24 bg-gray-50 dark:bg-gray-800/30">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16 text-violet-600 dark:text-violet-400">Branchenfokus: Sichtbare Erfolge</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {industrySuccesses.map(industry => {
+            const IconComponent = industry.icon;
+            return (
+            <div class="bg-white/80 dark:bg-gray-800/70 backdrop-blur-md p-6 rounded-xl shadow-lg border border-violet-300 dark:border-violet-500/40 hover:shadow-[0_0_20px_3px_var(--tw-shadow-color,rgba(139,92,246,0.3))] dark:hover:shadow-[0_0_20px_3px_var(--tw-shadow-color,rgba(139,92,246,0.4))] transition-shadow duration-300">
+              <IconComponent class="w-8 h-8 mb-4 text-violet-600 dark:text-violet-400" />
+              <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-3">{industry.industry}</h3>
+              <ul class="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-200 pl-1">
+                {industry.examples.map(example => (
+                  <li>{example}</li>
+                ))}
+              </ul>
+            </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+
+    <!-- Trenner -->
+    <div class="relative my-12"><div class="absolute inset-0 flex items-center" aria-hidden="true"><div class="w-full border-t border-gray-300 dark:border-gray-700"></div></div></div>
+
+    <!-- 5. Kundenstimmen -->
+    <section class="py-16 sm:py-24 bg-white dark:bg-gray-900">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16 text-pink-600 dark:text-pink-400">Das sagen unsere Partner</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {testimonials.map(testimonial => (
+            <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-md p-6 rounded-xl shadow-xl border border-pink-300 dark:border-pink-500/40 flex flex-col group transform hover:scale-105 transition-all duration-300 ease-in-out hover:shadow-[0_0_25px_5px_rgba(236,72,153,0.2)] dark:hover:shadow-[0_0_25px_5px_rgba(236,72,153,0.3)]">
+              <div class="relative mb-4 text-center">
+                 <Picture 
+                   src={testimonial.imgSrc} 
+                   alt={`Foto von ${testimonial.name}`} 
+                   class="w-24 h-24 rounded-full mx-auto border-2 border-pink-500 dark:border-pink-400 object-cover shadow-md group-hover:border-pink-400 dark:group-hover:border-pink-300 transition-colors duration-300" 
+                   widths={[100,200]} 
+                   sizes="100px" 
+                   width={100} 
+                   height={100} 
+                  />
+              </div>
+              <blockquote class="italic text-gray-700 dark:text-gray-200 mb-4 text-center grow relative z-10">"{testimonial.quote}"</blockquote>
+              <div class="mt-auto text-center">
+                <p class="font-semibold text-gray-800 dark:text-white">{testimonial.name}</p>
+                <p class="text-sm text-pink-600 dark:text-pink-300">{testimonial.position}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Trenner -->
+    <div class="relative my-12"><div class="absolute inset-0 flex items-center" aria-hidden="true"><div class="w-full border-t border-gray-300 dark:border-gray-700"></div></div></div>
+
+    <!-- 6. Erfolgs-Metriken Visualisierung -->
+    <section class="py-16 sm:py-24 bg-gray-50 dark:bg-gray-800/30">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl sm:text-4xl font-bold text-center mb-16 text-teal-600 dark:text-teal-400">Erfolge im Überblick</h2>
+        <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-md p-8 rounded-xl shadow-xl border border-teal-300 dark:border-teal-500/40 text-center">
+          <p class="text-lg text-gray-700 dark:text-gray-200 mb-4">
+            Hier entsteht eine moderne, interaktive Visualisierung unserer Erfolgsmetriken.
+          </p>
+          <ul class="list-disc list-inside space-y-2 text-gray-600 dark:text-gray-300 inline-block text-left">
+            <li>Durchschnittliche Prozessverbesserungen nach Branche (Grafik)</li>
+            <li>Typische Zeitersparnis nach Prozesstyp (Grafik)</li>
+            <li>Kosten-Nutzen-Analyse mit Break-Even-Punkten (interaktiver Rechner)</li>
+          </ul>
+          <div class="mt-8 p-6 bg-teal-50 dark:bg-teal-900/30 rounded-md border border-teal-200 dark:border-teal-600">
+             <p class="text-teal-700 dark:text-teal-200 font-semibold">Feature in Entwicklung: Interaktive Daten folgen in Kürze!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Call-to-Action -->
+    <section class="py-20 sm:py-28 bg-gradient-to-r from-orange-500 via-pink-600 to-purple-600">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-8 drop-shadow-lg">Bereit für deine eigene Erfolgsgeschichte?</h2>
+        <a 
+          href="/kontakt" 
+          class="inline-flex items-center justify-center px-8 py-3.5 font-semibold text-white bg-[#c2783c] rounded-lg shadow-xl hover:bg-[#b46c35] transition-all duration-300 transform hover:scale-105 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-[#c2783c] group"
+        >
+          <span>Kostenlose Potenzialanalyse starten</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transform transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  /* Ggf. globale Stile, falls für Neon-Effekte oder spezielle Visualisierungen benötigt */
+</style> 

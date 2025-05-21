@@ -1,0 +1,696 @@
+---
+// Daten für die sechs Prozessbereiche
+const prozessbereiche = [
+  {
+    id: "dokumentenmanagement",
+    cardTitle: "Intelligentes Dokumentenmanagement",
+    cardImage: "/images/services/process-icon.png",
+    cardDescription: "KI-gestützte Dokumentenerkennung mit automatischer Datenextraktion und Klassifizierung – papierlos und fehlerresistent.",
+    modalTitle: "Intelligentes Dokumentenmanagement",
+    modalImage: "/images/services/process-icon.png",
+    keyPoints: [
+      {
+        iconPlaceholder: "📄",
+        title: "Automatische Dokumentenerkennung",
+        text: "Eingehende Dokumente werden sofort erkannt, kategorisiert und mit relevanten Metadaten versehen - egal ob Rechnungen, Angebote oder Kundenkommunikation.",
+        metrics: ["95% Erkennungsgenauigkeit", "80% weniger manuelle Sortierung"]
+      },
+      {
+        iconPlaceholder: "🔍",
+        title: "Intelligente Datenextraktion",
+        text: "Relevante Informationen werden automatisch aus Dokumenten extrahiert und in Ihre Systeme übertragen - ohne manuelle Dateneingabe.",
+        metrics: ["85% Zeitersparnis bei der Datenerfassung", "99,7% Genauigkeit bei Standarddokumenten"]
+      },
+      {
+        iconPlaceholder: "🔐",
+        title: "Fehlerresistente Archivierung",
+        text: "Revisionssichere, durchsuchbare Ablage aller Dokumente mit automatischem Versioning und intelligenter Suchfunktion.",
+        metrics: ["Sofortiger Zugriff auf jedes Dokument", "Compliance-konforme Aufbewahrung"]
+      }
+    ],
+    cta: [{ text: "Demo vereinbaren", href: "#" }, { text: "Fallbeispiel ansehen", href: "#" }]
+  },
+  {
+    id: "email_steuerung",
+    cardTitle: "Smarte E-Mail-Steuerung",
+    cardImage: "/images/services/process-icon.png",
+    cardDescription: "Vollautomatische Inbox-Organisation mit kontextbasierter Priorisierung und vorkonfigurierten Antwortvorlagen.",
+    modalTitle: "Smarte E-Mail-Steuerung",
+    modalImage: "/images/services/process-icon.png",
+    keyPoints: [
+      {
+        iconPlaceholder: "📩",
+        title: "Automatische Inbox-Organisation",
+        text: "E-Mails werden automatisch nach Dringlichkeit, Thema und Bearbeitungsstatus sortiert - wichtige Nachrichten landen sofort oben.",
+        metrics: ["70% weniger Such- und Sortierzeit", "Keine übersehenen wichtigen E-Mails mehr"]
+      },
+      {
+        iconPlaceholder: "💬",
+        title: "Kontextbasierte Antwortvorschläge",
+        text: "KI-generierte Antwortentwürfe basierend auf früherer Kommunikation und Unternehmenskontext - mit nur einem Klick verwendbar.",
+        metrics: ["65% schnellere Antwortzeit", "Konsistente Kommunikation im Team"]
+      },
+      {
+        iconPlaceholder: "🔄",
+        title: "Intelligente Workflows & Automatisierung",
+        text: "Automatische Weiterleitung, Bearbeitung und Follow-up-Erinnerungen basierend auf Ihren individuellen Geschäftsprozessen.",
+        metrics: ["40% weniger E-Mail-Verwaltungsaufwand", "Lückenlose Nachverfolgung aller Anfragen"]
+      }
+    ],
+    cta: [{ text: "Live-Demo ansehen", href: "#" }, { text: "Persönliche Beratung", href: "#" }]
+  },
+  {
+    id: "terminkoordination",
+    cardTitle: "Autonome Terminkoordination",
+    cardImage: "/images/services/process-icon.png",
+    cardDescription: "KI-gesteuerte Kalenderverwaltung mit automatischer Teilnehmerabstimmung und nahtloser Systemintegration.",
+    modalTitle: "Autonome Terminkoordination",
+    modalImage: "/images/services/process-icon.png",
+    keyPoints: [
+      {
+        iconPlaceholder: "🗓️",
+        title: "KI-gesteuerte Terminplanung",
+        text: "Ihr digitaler Assistent übernimmt die komplette Terminkoordination - von der Anfrage bis zur Bestätigung, ohne Ihr Zutun.",
+        metrics: ["100% Ende des E-Mail-Ping-Pongs", "6,5 Stunden Zeitersparnis pro Monat"]
+      },
+      {
+        iconPlaceholder: "👥",
+        title: "Automatische Teilnehmerabstimmung",
+        text: "Intelligente Abfrage von Verfügbarkeiten und automatisches Finden des optimalen Termins für alle Beteiligten.",
+        metrics: ["85% schnellere Terminfindung", "90% weniger Terminverschiebungen"]
+      },
+      {
+        iconPlaceholder: "🔄",
+        title: "Nahtlose Systemintegration",
+        text: "Synchronisation mit allen gängigen Kalendersystemen, CRMs und Projektmanagement-Tools ohne Medienbrüche.",
+        metrics: ["Echtzeit-Updates in allen Systemen", "Automatische Erinnerungen für alle Beteiligten"]
+      }
+    ],
+    cta: [{ text: "Integration testen", href: "#" }, { text: "Erfolgsbeispiele", href: "#" }]
+  },
+  {
+    id: "datensynchronisation",
+    cardTitle: "Fehlerfreie Datensynchronisation",
+    cardImage: "/images/services/process-icon.png",
+    cardDescription: "Bidirektionaler Echtzeit-Datenaustausch zwischen allen Systemen ohne Informationsverlust oder Duplikate.",
+    modalTitle: "Fehlerfreie Datensynchronisation",
+    modalImage: "/images/services/process-icon.png",
+    keyPoints: [
+      {
+        iconPlaceholder: "🔄",
+        title: "Bidirektionaler Echtzeit-Datenaustausch",
+        text: "Automatische Synchronisation aller Daten zwischen Ihren Systemen in Echtzeit - Änderungen werden sofort überall aktualisiert.",
+        metrics: ["100% konsistente Daten in allen Systemen", "0% Datendubletten oder Inkonsistenzen"]
+      },
+      {
+        iconPlaceholder: "🔍",
+        title: "Intelligente Konfliktlösung",
+        text: "Automatische Erkennung und Lösung von Datenkonflikten ohne manuelle Eingriffe, basierend auf Ihren Geschäftsregeln.",
+        metrics: ["95% weniger manuelle Datenkorrekturen", "100% Nachvollziehbarkeit aller Änderungen"]
+      },
+      {
+        iconPlaceholder: "🔌",
+        title: "Universal-Konnektoren für alle Systeme",
+        text: "Verbindung zu praktisch allen Geschäftssystemen - von ERP und CRM bis zu spezialisierten Branchenlösungen und Legacy-Systemen.",
+        metrics: ["Keine Insellösungen mehr", "85% schnellere Implementierung neuer Systeme"]
+      }
+    ],
+    cta: [{ text: "Kompatibilitätscheck", href: "#" }, { text: "Integrationsdemo", href: "#" }]
+  },
+  {
+    id: "social_media",
+    cardTitle: "Strategisches Social Media Management",
+    cardImage: "/images/services/process-icon.png",
+    cardDescription: "Datengetriebene Content-Planung mit automatischer Veröffentlichung und Performance-Analyse.",
+    modalTitle: "Strategisches Social Media Management",
+    modalImage: "/images/services/process-icon.png",
+    keyPoints: [
+      {
+        iconPlaceholder: "📊",
+        title: "Datengetriebene Content-Planung",
+        text: "KI-gestützte Analyse erfolgreicher Content-Formate und optimale Planung neuer Inhalte basierend auf Zielgruppen-Performance.",
+        metrics: ["40% höhere Engagement-Raten", "65% treffsicherere Content-Strategie"]
+      },
+      {
+        iconPlaceholder: "✍️",
+        title: "Automatisierte Content-Erstellung",
+        text: "KI-generierte Posts, Grafiken und Kampagnen, die perfekt zu Ihrer Marke passen - mit finaler Kontrolle durch Sie.",
+        metrics: ["75% Zeitersparnis bei der Content-Erstellung", "3x mehr Inhalte mit gleichem Aufwand"]
+      },
+      {
+        iconPlaceholder: "📈",
+        title: "Performance-Analyse & Optimierung",
+        text: "Automatisches Tracking aller KPIs und kontinuierliche Optimierungsvorschläge für maximale Reichweite und Conversion.",
+        metrics: ["Echtzeit-Einblick in Performance-Daten", "35% höhere ROI Ihrer Social-Media-Aktivitäten"]
+      }
+    ],
+    cta: [{ text: "Content-Audit starten", href: "#" }, { text: "Strategie-Beratung", href: "#" }]
+  },
+  {
+    id: "geschaeftsberichte",
+    cardTitle: "Automatisierte Geschäftsberichte",
+    cardImage: "/images/services/process-icon.png",
+    cardDescription: "Self-updating Dashboards mit Echtzeit-KPIs und automatischer Insight-Generierung.",
+    modalTitle: "Automatisierte Geschäftsberichte",
+    modalImage: "/images/services/process-icon.png",
+    keyPoints: [
+      {
+        iconPlaceholder: "📊",
+        title: "Self-updating Dashboards",
+        text: "Dynamische Echtzeit-Dashboards, die automatisch alle relevanten Kennzahlen aktualisieren und visualisieren.",
+        metrics: ["100% aktuelle Daten zu jeder Zeit", "85% weniger Reportingaufwand"]
+      },
+      {
+        iconPlaceholder: "🔍",
+        title: "Automatische Insight-Generierung",
+        text: "KI-gestützte Analyse Ihrer Geschäftsdaten mit automatischer Erkennung von Trends, Anomalien und Handlungsempfehlungen.",
+        metrics: ["Proaktive Identifikation von Chancen", "45% frühere Erkennung von Problemen"]
+      },
+      {
+        iconPlaceholder: "📱",
+        title: "Multi-Plattform-Zugriff & Sharing",
+        text: "Zugriff auf alle Berichte von überall - mit automatischer Verteilung an Stakeholder und granularen Zugriffsrechten.",
+        metrics: ["Keine verpassten Reports mehr", "Selbstständige Informationsversorgung", "Vollständige Mobilität"]
+      }
+    ],
+    cta: [{ text: "Dashboard-Demo", href: "#" }, { text: "Reporting-Audit buchen", href: "#" }]
+  },
+  {
+    id: "conversational_ai",
+    cardTitle: "Conversational AI",
+    cardImage: "/images/services/ki-icon.png",
+    cardDescription: "Selbstlernende virtuelle Assistenten und fortschrittliche Sprachverarbeitung für nahtlose Kundeninteraktion.",
+    modalTitle: "Conversational AI",
+    modalImage: "/images/services/ki-icon.png",
+    keyPoints: [
+      {
+        iconPlaceholder: "🤖",
+        title: "Selbstlernende virtuelle Assistenten",
+        text: "KI-Chatbots, die Kundenanfragen verstehen, kontextbezogen reagieren und mit jeder Interaktion dazulernen.",
+        metrics: ["75% der Anfragen automatisch beantwortet", "24/7 Verfügbarkeit ohne Personalkosten"]
+      },
+      {
+        iconPlaceholder: "🗣️",
+        title: "Natural Language Processing",
+        text: "Fortschrittliche Sprachverarbeitung, die natürliche Kundensprache versteht - inklusive Dialekte, Fachjargon und Umgangssprache.",
+        metrics: ["92% Erkennungsrate bei komplexen Anfragen", "Nahtlose Kundeninteraktion ohne Frustration"]
+      },
+      {
+        iconPlaceholder: "🧠",
+        title: "Kontextbewusste Interaktion",
+        text: "Ihr KI-Assistent erinnert sich an frühere Gespräche und nutzt CRM-Daten für personalisierte, relevante Antworten.",
+        metrics: ["35% höhere Kundenzufriedenheit", "48% höhere Conversion-Rate"]
+      }
+    ],
+    cta: [{ text: "KI-Assistenten testen", href: "#" }, { text: "Einsatzszenarien", href: "#" }]
+  },
+  {
+    id: "praediktive_entscheidungssysteme",
+    cardTitle: "Prädiktive Entscheidungssysteme",
+    cardImage: "/images/services/ki-icon.png",
+    cardDescription: "Machine-Learning-Modelle für Echtzeit-Trend-Antizipation und automatisierte Entscheidungshilfen.",
+    modalTitle: "Prädiktive Entscheidungssysteme",
+    modalImage: "/images/services/ki-icon.png",
+    keyPoints: [
+      {
+        iconPlaceholder: "📈",
+        title: "Trend-Antizipation in Echtzeit",
+        text: "Machine-Learning-Modelle, die Muster in Ihren Daten erkennen und zukünftige Entwicklungen vorhersagen - bevor sie eintreten.",
+        metrics: ["70% treffsicherere Prognosen", "45% frühzeitigere Trend-Erkennung"]
+      },
+      {
+        iconPlaceholder: "��",
+        title: "Automatisierte Entscheidungshilfen",
+        text: "Datenbasierte Handlungsempfehlungen, die komplexe Faktoren berücksichtigen und klare Maßnahmen vorschlagen.",
+        metrics: ["60% schnellere Reaktionen auf Marktänderungen", "85% höhere Entscheidungssicherheit"]
+      },
+      {
+        iconPlaceholder: "🔍",
+        title: "Szenario-Simulation und Risikoanalyse",
+        text: "\"Was-wäre-wenn\"-Analysen, die verschiedene Handlungsoptionen durchspielen und optimale Strategien identifizieren.",
+        metrics: ["38% Risikoreduktion bei kritischen Entscheidungen", "52% bessere Ressourcenallokation"]
+      }
+    ],
+    cta: [{ text: "ROI-Kalkulator", href: "#" }, { text: "Prädiktive Demoanalyse", href: "#" }]
+  },
+  {
+    id: "ki_anomalieerkennung",
+    cardTitle: "KI-basierte Anomalieerkennung",
+    cardImage: "/images/services/ki-icon.png",
+    cardDescription: "Selbstoptimierende Algorithmen zur Früherkennung kritischer Abweichungen und proaktiven Benachrichtigung.",
+    modalTitle: "KI-basierte Anomalieerkennung",
+    modalImage: "/images/services/ki-icon.png",
+    keyPoints: [
+      {
+        iconPlaceholder: "🔍",
+        title: "Selbstoptimierende Algorithmen",
+        text: "KI-Systeme, die kontinuierlich aus Daten lernen und ihre Erkennungsmuster selbstständig verfeinern - ohne manuelle Programmierung.",
+        metrics: ["97% Erkennungsrate bei bekannten Anomalien", "82% Erkennung völlig neuer Abweichungsmuster"]
+      },
+      {
+        iconPlaceholder: "⚠️",
+        title: "Früherkennung kritischer Abweichungen",
+        text: "Identifikation von Problemen, lange bevor sie für Menschen erkennbar werden - von Ausreißern in Produktionsdaten bis zu Sicherheitsrisiken.",
+        metrics: ["300% frühere Problemerkennung", "65% Reduzierung ungeplanter Ausfallzeiten"]
+      },
+      {
+        iconPlaceholder: "📱",
+        title: "Proaktive Benachrichtigungen",
+        text: "Automatische Alarmierung bei kritischen Ereignissen mit konkreten Handlungsvorschlägen - direkt auf Ihr bevorzugtes Endgerät.",
+        metrics: ["25% Kostenreduktion durch Präventivmaßnahmen", "100% Überwachungsabdeckung ohne Mehraufwand"]
+      }
+    ],
+    cta: [{ text: "Überwachungsdemo", href: "#" }, { text: "Branchenspezifische Anwendung", href: "#" }]
+  },
+  {
+    id: "branchenspezifische_ki",
+    cardTitle: "Branchenspezifische KI-Lösungen",
+    cardImage: "/images/services/ki-icon.png",
+    cardDescription: "Maßgeschneiderte KI-Architekturen und branchenspezifisch trainierte Modelle für überprüfbare Erfolgsmetriken.",
+    modalTitle: "Branchenspezifische KI-Lösungen",
+    modalImage: "/images/services/ki-icon.png",
+    keyPoints: [
+      {
+        iconPlaceholder: "🎯",
+        title: "Maßgeschneiderte KI-Architekturen",
+        text: "Speziell für Ihre Branche und Ihre spezifischen Geschäftsanforderungen entwickelte KI-Lösungen - keine Standard-Software von der Stange.",
+        metrics: ["85% höhere Relevanz für Ihre Geschäftsprozesse", "40% schnellere Implementierung und Adoption"]
+      },
+      {
+        iconPlaceholder: "📊",
+        title: "Branchenspezifisches Training",
+        text: "KI-Modelle, die mit Daten aus Ihrer Branche trainiert wurden und daher Ihre Fachsprache, Prozesse und Herausforderungen verstehen.",
+        metrics: ["75% höhere Genauigkeit bei Branchenaufgaben", "90% weniger manuelle Anpassungen nötig"]
+      },
+      {
+        iconPlaceholder: "📈",
+        title: "Überprüfbare Erfolgsmetriken",
+        text: "Transparente KPIs und messbare Erfolgskriterien machen den Wertbeitrag Ihrer KI-Investition jederzeit nachvollziehbar.",
+        metrics: ["100% Transparenz über den ROI", "65% höhere Akzeptanz bei Stakeholdern"]
+      }
+    ],
+    cta: [{ text: "Branchenanalyse anfordern", href: "#" }, { text: "Referenzberichte", href: "#" }]
+  },
+  {
+    id: "interaktive_dashboards",
+    cardTitle: "Interaktive Business-Dashboards",
+    cardImage: "/images/services/daten-icon.png",
+    cardDescription: "Dynamische, intuitiv bedienbare Dashboards, die komplexe Daten sofort verständlich darstellen.",
+    modalTitle: "Interaktive Business-Dashboards",
+    modalImage: "/images/services/daten-icon.png",
+    keyPoints: [
+      {
+        iconPlaceholder: "📊",
+        title: "Benutzerfreundliche Echtzeit-Visualisierung",
+        text: "Dynamische, intuitiv bedienbare Dashboards, die komplexe Daten sofort verständlich darstellen und sich an die Bedürfnisse jedes Nutzers anpassen lassen.",
+        metrics: ["82% höhere Datenverständlichkeit", "45% schnellere Entscheidungsfindung"]
+      },
+      {
+        iconPlaceholder: "🔍",
+        title: "Intelligente Drill-down-Funktionen",
+        text: "Von der Übersicht ins Detail - mit einem Klick tiefer in die Daten eintauchen, um Ursachen zu verstehen und Zusammenhänge zu erkennen.",
+        metrics: ["78% tieferes Verständnis der Geschäftsdaten", "40% schnellere Problemidentifikation"]
+      },
+      {
+        iconPlaceholder: "🔄",
+        title: "Automatische Datenaktualisierung",
+        text: "Live-Daten ohne manuelle Eingriffe - alle relevanten Kennzahlen werden automatisch aktualisiert und bei kritischen Veränderungen wird sofort alarmiert.",
+        metrics: ["100% aktuelle Entscheidungsgrundlage", "85% weniger Zeitaufwand für Datenaufbereitung"]
+      }
+    ],
+    cta: [{ text: "Dashboard-Demo ansehen", href: "#" }, { text: "Eigenes Dashboard designen", href: "#" }]
+  },
+  {
+    id: "praediktive_analytik",
+    cardTitle: "Prädiktive Analytik",
+    cardImage: "/images/services/daten-icon.png",
+    cardDescription: "Machine-Learning-Modelle für präzise Zukunftsprognosen und proaktive Trenderkennung.",
+    modalTitle: "Prädiktive Analytik",
+    modalImage: "/images/services/daten-icon.png",
+    keyPoints: [
+      {
+        iconPlaceholder: "🔮",
+        title: "Fortschrittliche Vorhersagealgorithmen",
+        text: "Machine-Learning-Modelle, die aus historischen Daten lernen und zukünftige Entwicklungen mit hoher Genauigkeit vorhersagen.",
+        metrics: ["65% präzisere Prognosen als herkömmliche Methoden", "3x längerer Vorhersagezeitraum"]
+      },
+      {
+        iconPlaceholder: "📈",
+        title: "Automatische Muster- und Trenderkennung",
+        text: "Identifikation von verborgenen Zusammenhängen und aufkommenden Trends, lange bevor sie in traditionellen Analysen sichtbar werden.",
+        metrics: ["72% frühere Trenderkennung", "55% Wettbewerbsvorteil durch proaktives Handeln"]
+      },
+      {
+        iconPlaceholder: "🧠",
+        title: "Datenbasierte Handlungsempfehlungen",
+        text: "Konkrete, umsetzbare Vorschläge basierend auf den Analyseergebnissen - nicht nur Daten, sondern Entscheidungshilfen.",
+        metrics: ["50% weniger \"Analysis Paralysis\"", "38% höhere Umsetzungsrate von Erkenntnissen"]
+      }
+    ],
+    cta: [{ text: "Prädiktive Analyse starten", href: "#" }, { text: "Anwendungsbeispiele", href: "#" }]
+  },
+  {
+    id: "automatisierte_reportingsysteme",
+    cardTitle: "Automatisierte Reporting-Systeme",
+    cardImage: "/images/services/daten-icon.png",
+    cardDescription: "Vollautomatische Generierung und Verteilung von Berichten mit benutzerdefinierten Schwellenwerten.",
+    modalTitle: "Automatisierte Reporting-Systeme",
+    modalImage: "/images/services/daten-icon.png",
+    keyPoints: [
+      {
+        iconPlaceholder: "📋",
+        title: "Planmäßige Berichtserstellung",
+        text: "Vollautomatische Generierung und Verteilung von Berichten - täglich, wöchentlich oder monatlich, genau wenn sie benötigt werden.",
+        metrics: ["95% weniger manuelle Berichtserstellung", "8,5 Stunden Zeitersparnis pro Woche"]
+      },
+      {
+        iconPlaceholder: "⚙️",
+        title: "Benutzerdefinierte Schwellenwerte",
+        text: "Individuelle Grenzwerte und Kriterien für jeden Bericht, um genau die Informationen zu erhalten, die für Ihre Entscheidungen relevant sind.",
+        metrics: ["60% relevantere Berichtsinhalte", "70% höhere Nutzung der Berichte"]
+      },
+      {
+        iconPlaceholder: "🔔",
+        title: "Intelligente Benachrichtigungsfunktionen",
+        text: "Automatische Alarme bei Erreichen definierter Schwellenwerte oder ungewöhnlichen Veränderungen - über bevorzugte Kanäle.",
+        metrics: ["85% schnelleres Eingreifen bei kritischen Veränderungen", "100% Abdeckung wichtiger KPIs"]
+      }
+    ],
+    cta: [{ text: "Report-Automatisierung testen", href: "#" }, { text: "Reporting-Audit", href: "#" }]
+  },
+  {
+    id: "data_integration_suite",
+    cardTitle: "Data Integration Suite",
+    cardImage: "/images/services/daten-icon.png",
+    cardDescription: "Zentrale Datenplattform mit automatischer Harmonisierung für eine einheitliche Wahrheitsquelle.",
+    modalTitle: "Data Integration Suite",
+    modalImage: "/images/services/daten-icon.png",
+    keyPoints: [
+      {
+        iconPlaceholder: "🔄",
+        title: "Zentrale Datenplattform",
+        text: "Eine einheitliche Basis für alle Ihre Unternehmensdaten - vom ERP bis zum CRM, von Excel-Tabellen bis zu Cloud-Diensten.",
+        metrics: ["85% weniger Datensilos", "360°-Sicht auf Ihr Unternehmen"]
+      },
+      {
+        iconPlaceholder: "🧹",
+        title: "Automatische Datenharmonisierung",
+        text: "Intelligente Bereinigung, Standardisierung und Vereinheitlichung unterschiedlicher Datenquellen ohne manuelle Eingriffe.",
+        metrics: ["90% weniger Datenfehler", "75% Zeitersparnis bei der Datenaufbereitung"]
+      },
+      {
+        iconPlaceholder: "🛡️",
+        title: "Einheitliche Wahrheitsquelle",
+        text: "Schluss mit widersprüchlichen Daten und Unsicherheiten - alle Entscheidungen basieren auf denselben, vertrauenswürdigen Informationen.",
+        metrics: ["95% weniger Diskussionen über Datenrichtigkeit", "45% schnellere Entscheidungsprozesse"]
+      }
+    ],
+    cta: [{ text: "Datenintegration planen", href: "#" }, { text: "Quellsysteme prüfen", href: "#" }]
+  },
+  {
+    id: "advanced_data_mining",
+    cardTitle: "Advanced Data Mining",
+    cardImage: "/images/services/daten-icon.png",
+    cardDescription: "KI-gestützte Musterkennung und Korrelationsanalyse für umsetzbare Geschäftserkenntnisse.",
+    modalTitle: "Advanced Data Mining",
+    modalImage: "/images/services/daten-icon.png",
+    keyPoints: [
+      {
+        iconPlaceholder: "🔍",
+        title: "KI-gestützte Musterkennung",
+        text: "Hochentwickelte Algorithmen entdecken versteckte Zusammenhänge in Ihren Daten, die mit traditionellen Analysen nicht erkennbar wären.",
+        metrics: ["3x mehr Erkenntnisse aus denselben Daten", "70% höhere Datennutzung"]
+      },
+      {
+        iconPlaceholder: "💡",
+        title: "Intelligente Korrelationsanalyse",
+        text: "Automatische Identifikation von Faktoren, die Ihre Geschäftsergebnisse wirklich beeinflussen - jenseits von offensichtlichen Zusammenhängen.",
+        metrics: ["65% besseres Verständnis von Ursache-Wirkungs-Beziehungen", "50% präzisere Strategieanpassungen"]
+      },
+      {
+        iconPlaceholder: "📊",
+        title: "Umsetzbare Geschäftserkenntnisse",
+        text: "Umwandlung komplexer Datenanalysen in konkrete, verständliche und sofort anwendbare Geschäftserkenntnisse.",
+        metrics: ["80% höhere Umsetzungsrate von Dateninsights", "45% schnellere Amortisation Ihrer Dateninvestition"]
+      }
+    ],
+    cta: [{ text: "Data Mining Workshop", href: "#" }, { text: "Potenzialanalyse", href: "#" }]
+  },
+  {
+    id: "prozessanalyse_mapping",
+    cardTitle: "Prozessanalyse & Mapping",
+    cardImage: "/images/services/workflow-icon.png",
+    cardDescription: "KI-gestützte Identifikation von Engpässen und wissenschaftliches Process Mining für faktenbasierte Optimierung.",
+    modalTitle: "Prozessanalyse & Mapping",
+    modalImage: "/images/services/workflow-icon.png",
+    keyPoints: [
+      {
+        iconPlaceholder: "🔍",
+        title: "KI-gestützte Identifikation von Engpässen",
+        text: "Intelligente Algorithmen analysieren Ihre bestehenden Prozesse und decken automatisch Schwachstellen, Engpässe und Ineffizienzen auf.",
+        metrics: ["90% schnellere Schwachstellenanalyse", "65% mehr identifizierte Optimierungspotenziale"]
+      },
+      {
+        iconPlaceholder: "📊",
+        title: "Wissenschaftliches Process Mining",
+        text: "Mit fortschrittlicher Process-Mining-Technologie visualisieren wir die tatsächlichen Abläufe in Ihrem Unternehmen - nicht nur die dokumentierten.",
+        metrics: ["100% faktenbasierte Prozessoptimierung", "85% exaktere Ursachenanalyse"]
+      },
+      {
+        iconPlaceholder: "📋",
+        title: "Datenbasierte Optimierungsstrategien",
+        text: "Konkrete, umsetzbare Verbesserungsvorschläge mit quantifizierbaren Auswirkungen auf Zeit, Kosten und Qualität.",
+        metrics: ["40% schnellere Implementierung von Verbesserungen", "75% höhere Erfolgsrate bei Prozessoptimierungen"]
+      }
+    ],
+    cta: [{ text: "Prozessanalyse starten", href: "#" }, { text: "Methodik entdecken", href: "#" }]
+  },
+  {
+    id: "automatisierte_workflowsteuerung",
+    cardTitle: "Automatisierte Workflowsteuerung",
+    cardImage: "/images/services/workflow-icon.png",
+    cardDescription: "Intelligente Prozessautomatisierung mit dynamischer Ressourcenzuweisung und Echtzeit-Fortschrittsverfolgung.",
+    modalTitle: "Automatisierte Workflowsteuerung",
+    modalImage: "/images/services/workflow-icon.png",
+    keyPoints: [
+      {
+        iconPlaceholder: "⚙️",
+        title: "Intelligente Prozessautomatisierung",
+        text: "End-to-End-Automation von Routineprozessen mit intelligenten Entscheidungsregeln und automati-schen Verzweigungen bei Ausnahmefällen.",
+        metrics: ["85% reduzierte Durchlaufzeiten", "95% weniger manuelle Eingriffe bei Standardfällen"]
+      },
+      {
+        iconPlaceholder: "👥",
+        title: "Dynamische Ressourcenzuweisung",
+        text: "KI-basierte Zuteilung von Aufgaben an die optimalen Bearbeiter basierend auf Kompetenz, Kapazität und Priorität.",
+        metrics: ["60% bessere Ressourcenauslastung", "45% schnellere Bearbeitung dringender Fälle"]
+      },
+      {
+        iconPlaceholder: "📱",
+        title: "Echtzeit-Fortschrittsverfolgung",
+        text: "Transparente Überwachung aller laufenden Prozesse mit automatischen Benachrichtigungen bei Verzögerungen oder Problemfällen.",
+        metrics: ["100% Prozesstransparenz", "70% weniger übersehene Fristen"]
+      }
+    ],
+    cta: [{ text: "Automatisierungsdemo", href: "#" }, { text: "Workflow-Audit buchen", href: "#" }]
+  },
+  {
+    id: "nahtlose_systemintegration",
+    cardTitle: "Nahtlose Systemintegration",
+    cardImage: "/images/services/workflow-icon.png",
+    cardDescription: "API-basierte Systemverbindung für bidirektionalen Datenaustausch und automatisierte End-to-End-Prozesse.",
+    modalTitle: "Nahtlose Systemintegration",
+    modalImage: "/images/services/workflow-icon.png",
+    keyPoints: [
+      {
+        iconPlaceholder: "🔌",
+        title: "API-basierte Systemverbindung",
+        text: "Professionelle Integration aller Ihrer Geschäftssysteme über moderne APIs und Middleware - ohne kostspielige Neuentwicklung.",
+        metrics: ["90% kürzere Integrationszeit", "Verbindung mit praktisch allen Systemen"]
+      },
+      {
+        iconPlaceholder: "🔄",
+        title: "Bidirektionaler Datenaustausch",
+        text: "Synchronisation von Daten in Echtzeit zwischen allen Systemen - Änderungen werden sofort überall verfügbar.",
+        metrics: ["100% konsistente Daten in allen Systemen", "75% weniger manuelle Dateneingaben"]
+      },
+      {
+        iconPlaceholder: "🛠️",
+        title: "Keine manuellen Zwischenschritte",
+        text: "Automatisierte End-to-End-Prozesse über Systemgrenzen hinweg ohne manuelle Export-Import-Vorgänge oder Medienbrüche.",
+        metrics: ["95% weniger Übertragungsfehler", "50% gesteigerter Durchsatz bei systemübergreifenden Prozessen"]
+      }
+    ],
+    cta: [{ text: "Integrationspotenzial prüfen", href: "#" }, { text: "Fallstudien", href: "#" }]
+  },
+  {
+    id: "digitale_freigabeprozesse",
+    cardTitle: "Digitale Freigabeprozesse",
+    cardImage: "/images/services/workflow-icon.png",
+    cardDescription: "Automatisierte Genehmigungsworkflows mit mobilen Benachrichtigungen und rechtssicheren elektronischen Signaturen.",
+    modalTitle: "Digitale Freigabeprozesse",
+    modalImage: "/images/services/workflow-icon.png",
+    keyPoints: [
+      {
+        iconPlaceholder: "✅",
+        title: "Automatisierte Genehmigungsworkflows",
+        text: "Digitalisierte Freigabeprozesse mit klaren Verantwortlichkeiten, automatischer Eskalation und lückenloser Dokumentation.",
+        metrics: ["85% schnellere Freigabeprozesse", "100% Nachvollziehbarkeit aller Entscheidungen"]
+      },
+      {
+        iconPlaceholder: "📱",
+        title: "Mobile Benachrichtigungen",
+        text: "Sofortige Alerts auf dem bevorzugten Endgerät mit direkter Möglichkeit zur Freigabe oder Rückfrage - jederzeit und überall.",
+        metrics: ["60% schnellere Reaktionszeiten", "90% weniger Verzögerungen durch Abwesenheiten"]
+      },
+      {
+        iconPlaceholder: "✍️",
+        title: "Rechtssichere elektronische Signaturen",
+        text: "Integration von rechtskonformen elektronischen Unterschriften für vollständig papierlose Freigabeprozesse.",
+        metrics: ["100% papierlose Dokumentation", "75% geringere Prozesskosten"]
+      }
+    ],
+    cta: [{ text: "Freigabeprozesse optimieren", href: "#" }, { text: "Live-Demo", href: "#" }]
+  },
+  {
+    id: "continuous_process_monitoring",
+    cardTitle: "Continuous Process Monitoring",
+    cardImage: "/images/services/workflow-icon.png",
+    cardDescription: "Automatisierte Leistungsüberwachung mit KI-gestützten Optimierungsvorschlägen und flexiblen Anpassungsmöglichkeiten.",
+    modalTitle: "Continuous Process Monitoring",
+    modalImage: "/images/services/workflow-icon.png",
+    keyPoints: [
+      {
+        iconPlaceholder: "📊",
+        title: "Automatisierte Leistungsüberwachung",
+        text: "Kontinuierliche Echtzeitüberwachung aller Prozess-KPIs mit automatischer Alarmierung bei Abweichungen vom Sollzustand.",
+        metrics: ["100% Kontrolle über Prozessperformance", "80% frühere Erkennung von Problemen"]
+      },
+      {
+        iconPlaceholder: "🧠",
+        title: "KI-gestützte Optimierungsvorschläge",
+        text: "Automatische Analyse von Prozessdaten und Ableitung konkreter Verbesserungsvorschläge durch selbstlernende Algorithmen.",
+        metrics: ["65% mehr Optimierungspotenziale erkannt", "50% gesteigerter Prozessdurchsatz über Zeit"]
+      },
+      {
+        iconPlaceholder: "🔄",
+        title: "Flexible Anpassungsmöglichkeiten",
+        text: "Schnelle Implementierung von Prozessänderungen und unmittelbare Messung der Auswirkungen für kontinuierliche Verbesserung.",
+        metrics: ["70% schnellere Implementierung von Änderungen", "85% höhere Erfolgsrate von Prozessanpassungen"]
+      }
+    ],
+    cta: [{ text: "Monitoring-Konzept", href: "#" }, { text: "Performance-Check buchen", href: "#" }]
+  }
+];
+
+const prozessbereicheJSON = JSON.stringify(prozessbereiche);
+
+export interface Props {
+  ueberschrift?: string;
+}
+const { ueberschrift = "Wie wir Ihre Prozesse revolutionieren" } = Astro.props;
+---
+
+<section 
+  class="py-20 px-4 bg-gradient-to-b from-white to-gray-100 dark:from-gray-900 dark:to-gray-800"
+  x-data={`{
+    openModal: false,
+    selectedProzess: null,
+    prozessbereicheInternal: ${prozessbereicheJSON},
+    setSelectedProzess(index) {
+      this.selectedProzess = this.prozessbereicheInternal[index];
+      this.openModal = true;
+    }
+  }`}
+>
+  <div class="container mx-auto">
+    <div class="text-center mb-16" data-aos="fade-up">
+      <h2 class="text-4xl font-bold mb-4 text-gray-900 dark:text-gray-100">
+        {ueberschrift}
+      </h2>
+      
+      <!-- Optional: Sub-Headline hier einfügen -->
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {prozessbereiche.map((prozess, index) => (
+        <div
+          class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 cursor-pointer flex flex-col items-center text-center ring-1 ring-gray-200 dark:ring-gray-700 hover:ring-orange-500 dark:hover:ring-orange-400"
+          data-aos="fade-up"
+          data-aos-delay={index * 100}
+          @click={`selectedProzess = prozessbereicheInternal[${index}]; openModal = true`}
+        >
+          <img src={prozess.cardImage} alt={prozess.cardTitle} class="w-16 h-16 mb-5 object-contain" />
+          <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">{prozess.cardTitle}</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 flex-grow">{prozess.cardDescription}</p>
+          <span class="mt-4 text-sm font-medium text-orange-600 dark:text-orange-400 hover:underline">Details anzeigen →</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div x-show="openModal"
+       x-cloak
+       x-transition:enter="transition ease-out duration-300"
+       x-transition:enter-start="opacity-0"
+       x-transition:enter-end="opacity-100"
+       x-transition:leave="transition ease-in duration-200"
+       x-transition:leave-start="opacity-100"
+       x-transition:leave-end="opacity-0"
+       class="fixed inset-0 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4 z-[999]"
+       aria-labelledby="modal-title"
+       role="dialog"
+       aria-modal="true">
+    <div 
+      @click.away="openModal = false" 
+      class="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto ring-1 ring-gray-300 dark:ring-gray-700"
+      x-show="selectedProzess" 
+    >
+      <div class="flex justify-between items-center mb-6">
+        <h3 id="modal-title" class="text-2xl font-bold text-gray-900 dark:text-white" x-text="selectedProzess?.modalTitle"></h3>
+        <button @click="openModal = false" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+      </div>
+      <img x-show="selectedProzess?.modalImage" :src="selectedProzess?.modalImage" :alt="selectedProzess?.modalTitle" class="w-full h-auto max-h-72 object-cover rounded-lg mb-6 shadow-md" />
+
+      <template x-if="openModal && selectedProzess?.keyPoints && selectedProzess.keyPoints.length > 0">
+        <div class="space-y-8 mt-6">
+          <template x-for="(kp, kpIndex) in selectedProzess.keyPoints" :key="kpIndex">
+            <div class="keypoint-block border border-gray-200 dark:border-gray-700 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div class="flex items-start space-x-3 mb-3">
+                <span class="text-3xl pt-1" x-text="kp.iconPlaceholder"></span>
+                <h5 class="text-xl font-semibold text-orange-600 dark:text-orange-400" x-text="kp.title"></h5>
+              </div>
+              <p class="text-gray-700 dark:text-gray-300 mb-3 ml-10" x-text="kp.text"></p>
+              <template x-if="kp.metrics && kp.metrics.length > 0">
+                <ul class="list-none pl-10 space-y-1">
+                  <template x-for="(metric, metricIndex) in kp.metrics" :key="metricIndex">
+                    <li class="font-semibold text-green-600 dark:text-green-400 flex items-center">
+                      <svg class="h-5 w-5 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                      </svg>
+                      <span x-text="metric.replace('→ ', '')"></span>
+                    </li>
+                  </template>
+                </ul>
+              </template>
+            </div>
+          </template>
+        </div>
+      </template>
+
+      <div 
+        class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row sm:justify-end space-y-3 sm:space-y-0 sm:space-x-4" 
+        x-show="selectedProzess && selectedProzess.cta && selectedProzess.cta.length > 0"
+      >
+        <template x-for="(button, btnIndex) in (selectedProzess?.cta || [])" :key="btnIndex">
+          <a :href="button.href" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-center text-white bg-orange-500 rounded-lg hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-500/50 dark:focus:ring-orange-400/50 transition-colors">
+            <span x-text="button.text"></span>
+          </a>
+        </template>
+      </div>
+    </div>
+  </div>
+</section> 

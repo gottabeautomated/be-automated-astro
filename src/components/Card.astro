@@ -1,0 +1,79 @@
+---
+interface Props {
+  className?: string;
+  hoverEffect?: 'lift' | 'glow' | 'accent' | 'all' | 'copper';
+}
+
+const { 
+  className = "",
+  hoverEffect = "copper" 
+} = Astro.props;
+
+// Wir definieren die Basis-Klassen hier
+const baseClasses = "p-6 rounded-xl bg-white/70 dark:bg-gray-800/70 backdrop-blur-md shadow-soft border border-transparent transition-all duration-300";
+---
+
+<div 
+  class={`${baseClasses} ${className}`}
+  data-hover={hoverEffect}
+>
+  <slot />
+</div>
+
+<style>
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  
+  /* Lift-Effekt */
+  div[data-hover="lift"]:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Glow-Effekt */
+  div[data-hover="glow"]:hover {
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
+    border-color: rgba(59, 130, 246, 0.4);
+  }
+  
+  /* Accent-Effekt */
+  div[data-hover="accent"]:hover {
+    background-color: rgba(239, 246, 255, 0.9);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Alle Effekte kombiniert */
+  div[data-hover="all"]:hover {
+    transform: translateY(-8px);
+    background-color: rgba(239, 246, 255, 0.9);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.3);
+  }
+  
+  /* Kupfer-Glühen Effekt */
+  div[data-hover="copper"]:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-copper);
+    box-shadow: 0 0 25px rgba(194, 120, 60, 0.5);
+    background-color: rgba(255, 250, 245, 0.95);
+    transition: all 0.3s ease;
+  }
+  
+  /* Dark Mode Anpassungen */
+  :global(.dark) div[data-hover="copper"]:hover {
+    background-color: rgba(40, 40, 45, 0.95);
+    box-shadow: 0 0 25px rgba(211, 133, 69, 0.5);
+  }
+  
+  :global(.dark) div[data-hover="accent"]:hover {
+    background-color: rgba(30, 41, 59, 0.8);
+    border-color: rgba(96, 165, 250, 0.4);
+  }
+  
+  :global(.dark) div[data-hover="all"]:hover {
+    background-color: rgba(30, 41, 59, 0.8);
+    border-color: rgba(96, 165, 250, 0.4);
+  }
+</style> 

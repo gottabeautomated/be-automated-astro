@@ -1,15 +1,16 @@
 ---
-interface Props {
-  subtitle?: string;
-  ctaText?: string;
-  ctaLink?: string;
-}
+// Props entfernt, da Texte direkt gesetzt werden für die neue Positionierung
+// interface Props {
+//   subtitle?: string;
+//   ctaText?: string;
+//   ctaLink?: string;
+// }
 
-const {
-  subtitle = "Die Agentur für smarte Automatisierung und KI – DSGVO-konform und elegant umgesetzt.",
-  ctaText = "Jetzt kostenloses Beratungsgespräch sichern",
-  ctaLink = "/kontakt"
-} = Astro.props;
+// const {
+//   subtitle = "Die Agentur für smarte Automatisierung und KI – DSGVO-konform und elegant umgesetzt.",
+//   ctaText = "Jetzt kostenloses Beratungsgespräch sichern",
+//   ctaLink = "/kontakt"
+// } = Astro.props;
 ---
 
 <section class="py-32 bg-gradient-to-b from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 text-center transition-colors duration-300">
@@ -19,40 +20,42 @@ const {
     </div>
     
     <h1 class="text-5xl sm:text-6xl md:text-7xl font-extrabold leading-tight tracking-tight mb-8">
-      Wir machen <span class="color-gradient">einfach</span> einfach.
+      Digitale Assistenten für <span class="color-gradient">Handwerksbetriebe</span> und KMUs
     </h1>
     
     <p class="text-xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl mx-auto">
-      {subtitle}
+      Wir automatisieren die zeitraubenden Prozesse, die Sie vom eigentlichen Geschäft abhalten.
     </p>
     
     <a 
-      href={ctaLink} 
-      class="inline-flex items-center justify-center px-6 py-3 font-semibold text-white bg-[#c2783c] rounded-full shadow-lg hover:bg-[#b46c35] transition duration-300"
+      href="/kontakt" 
+      class="inline-flex items-center justify-center px-8 py-4 font-semibold text-white bg-[#c2783c] rounded-full shadow-lg hover:bg-[#b46c35] transition duration-300 text-lg"
       data-aos="fade-up" 
       data-aos-delay="200"
     >
-      {ctaText} →
+      Entdecken Sie, welche Prozesse Sie ab morgen nicht mehr selbst erledigen müssen – im kostenlosen Automatisierungs-Check →
     </a>
     
     <div class="mt-16" data-aos="fade-up" data-aos-delay="300">
       <div class="flex items-center justify-center mb-4">
-        <span class="inline-block bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 p-1 rounded-md mr-3">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        <span class="inline-block bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-400 p-1.5 rounded-md mr-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
           </svg>
         </span>
-        <span class="dark:text-gray-300">Automatisierung für KMU – praxisnah & DSGVO-konform</span>
+        <span class="dark:text-gray-300 text-lg">
+          Von einem Handwerker für Handwerker entwickelt – wir kennen Ihre täglichen Herausforderungen.
+        </span>
       </div>
     </div>
     
     <div class="mt-16 max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-700 bg-black transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
       <!-- GIF Container -->
       <div class="w-full h-auto relative" style="aspect-ratio: 16/9;">
-        <!-- Gewünschtes GIF von Sandia Labs (Cybersecurity Animation) -->
+        <!-- Gewünschtes GIF von Sandia Labs (Cybersecurity Animation) - Platzhalter, später anpassen -->
         <img 
           src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExZng2WW51Mmh5MWh5bXNhcmR3a21leGpnNTNtZHk3OHZ3MHVraGUzciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/fx6Ynu2Hy1HYmsARdw/giphy.gif" 
-          alt="Cybersecurity Netzwerk Animation" 
+          alt="Cybersecurity Netzwerk Animation - Platzhalter" 
           class="w-full h-full object-cover"
           onerror="this.src='/images/automation-code.avif'; this.onerror='';"
         />

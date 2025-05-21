@@ -3,33 +3,117 @@ import ServiceCard from "./ServiceCard.astro";
 
 const services = [
   {
-    title: "KI-Automatisierung",
-    description: "Chatbots, Antworten & intelligente Workflows mit n8n & Zapier",
+    title: "Kundenanfragen auf Autopilot",
     image: "/images/services/service-ai-automation.webp",
-    color: "from-indigo-600 to-purple-700"
+    keyPoints: [
+      {
+        iconPlaceholder: "⚡",
+        title: "Sofortantworten, die überzeugen",
+        text: "KI-gestützte Erstantworten innerhalb von Sekunden - personalisiert, professionell und mit allen wichtigen Informationen. Auch nachts und am Wochenende.",
+        metrics: ["95% schnellere Reaktionszeit", "35% höhere Konversionsrate"]
+      },
+      {
+        iconPlaceholder: "⚡",
+        title: "Intelligente Anfrage-Qualifikation",
+        text: "Automatische Erkennung der Kundenintention und Priorisierung nach Dringlichkeit und Potential. Keine wertvollen Leads mehr übersehen.",
+        metrics: ["80% weniger manuelle Sortierung", "100% Erfassung aller Anfragen"]
+      },
+      {
+        iconPlaceholder: "⚡",
+        title: "Angebotserstellung mit Turbo-Modus",
+        text: "Vorlagen, Produktdaten und Preise automatisch zusammengeführt zum perfekten Angebot - mit finaler Kontrolle durch Sie.",
+        metrics: ["70% Zeitersparnis bei Angebotserstellung", "28% höhere Abschlussquote"]
+      }
+    ],
+    cta: [{ text: "Anwendungsbeispiel anzeigen", href: "#" },{ text: "Demo anfragen", href: "#" }]
   },
   {
-    title: "Digitale Assistenten",
-    description: "Wie unser Hochzeitsplaner 'WILMA' - smarte Helfer für Ihren Erfolg",
+    title: "Intelligente Büroorganisation",
     image: "/images/services/service-digital-assistant.webp",
-    color: "from-[#c2783c] to-orange-600"
+    keyPoints: [
+      {
+        iconPlaceholder: "🔍",
+        title: "Nie wieder Dokumenten-Chaos",
+        text: "KI-gestützte Dokumentenerkennung und automatische Ablage nach individuellen Regeln. Alles sofort auffindbar - selbst mit ungenauen Suchbegriffen.",
+        metrics: ["85% weniger Suchzeit", "100% digitale Verfügbarkeit"]
+      },
+      {
+        iconPlaceholder: "📝",
+        title: "Sprachgesteuerte Dokumentation",
+        text: "Gespräche, Meetings und Ideen per Sprachbefehl dokumentieren. Automatische Transkription, Zusammenfassung und Aufgabenextraktion.",
+        metrics: ["30 Min. Zeitersparnis pro Meeting", "Keine verlorenen Informationen mehr"]
+      },
+      {
+        iconPlaceholder: "📅",
+        title: "Intelligentes Terminmanagement",
+        text: "Automatische Terminkoordination mit KI-Assistenten, der alle Beteiligten koordiniert, Einladungen versendet und an Vorbereitungen erinnert.",
+        metrics: ["90% weniger E-Mail-Ping-Pong", "75% reduzierte No-Show-Rate"]
+      }
+    ],
+    cta: [{ text: "Live-Demo ansehen", href: "#" },{ text: "Implementierungsbeispiel", href: "#" }]
   },
   {
-    title: "CRM & Lead-Automation",
-    description: "Kundendaten strukturieren & automatisierte Follow-ups für mehr Umsatz",
-    image: "/images/services/service-crm-automation.webp",
-    color: "from-sky-500 to-blue-700"
-  },
-  {
-    title: "Content-Strategie mit KI",
-    description: "SEO-Inhalte, Videos & Blogartikel effizient automatisiert erstellen",
+    title: "Digitale Präsenz ohne Zusatzarbeit",
     image: "/images/services/service-content-strategy-2.webp",
-    color: "from-emerald-500 to-green-700"
+    keyPoints: [
+      {
+        iconPlaceholder: "📱",
+        title: "Automatisiertes Social Media Management",
+        text: "KI-generierte Posts basierend auf Ihren Inhalten, optimal auf Ihre Zielgruppe zugeschnitten und zum bestmöglichen Zeitpunkt veröffentlicht.",
+        metrics: ["3x höhere Posting-Frequenz", "45% mehr Engagement"]
+      },
+      {
+        iconPlaceholder: "✍️",
+        title: "Blogbeiträge, die sich selbst schreiben",
+        text: "Automatische Erstellung von SEO-optimierten Blogbeiträgen zu Ihren Kernthemen - mit Ihrer finalen Freigabe vor Veröffentlichung.",
+        metrics: ["4 Stunden Zeitersparnis pro Beitrag", "65% besseres Google-Ranking"]
+      },
+      {
+        iconPlaceholder: "📊",
+        title: "Performance-Tracking & Optimierung",
+        text: "Automatische Analyse Ihrer Online-Präsenz mit datenbasierten Verbesserungsvorschlägen und Wettbewerbsvergleich.",
+        metrics: ["Kontinuierliche Optimierung", "Klare ROI-Nachverfolgung"]
+      }
+    ],
+    cta: [{ text: "Fallstudie ansehen", href: "#" },{ text: "Strategie-Call buchen", href: "#" }]
+  },
+  {
+    title: "Vom Lead zum Auftrag – beschleunigt",
+    image: "/images/services/service-crm-automation.webp",
+    keyPoints: [
+      {
+        iconPlaceholder: "⚡",
+        title: "Automatisierte Lead-Qualifizierung",
+        text: "KI-gestützte Analyse und Scoring neuer Leads nach Kaufbereitschaft, Budget und Passgenauigkeit. Nur heiße Leads landen auf Ihrem Tisch.",
+        metrics: ["60% höhere Vertriebseffizienz", "45% bessere Ressourcennutzung"]
+      },
+      {
+        iconPlaceholder: "🔄",
+        title: "Intelligente Follow-up-Sequenzen",
+        text: "Automatisierte, personalisierte Nachfassaktionen mit perfektem Timing und inhaltsbasierter Anpassung je nach Kundeninteraktion.",
+        metrics: ["78% weniger verlorene Leads", "40% höhere Rückmeldequote"]
+      },
+      {
+        iconPlaceholder: "📈",
+        title: "Datenbasierte Verkaufsunterstützung",
+        text: "Echtzeit-Insights zu Kundenverhalten, optimalen Angebotsstrategien und Erfolgswahrscheinlichkeiten für jeden Lead.",
+        metrics: ["32% höhere Abschlussquote", "25% kürzere Verkaufszyklen"]
+      }
+    ],
+    cta: [{ text: "ROI-Rechner nutzen", href: "#" },{ text: "Vertriebsdemo buchen", href: "#" }]
   }
 ];
+
+const alpineData = {
+  openModal: false,
+  selectedFeature: { title: '', image: '', keyPoints: [], cta: [] }, // Angepasst für neue Struktur
+  features: services 
+};
+const alpineDataString = JSON.stringify(alpineData);
 ---
 
-<section class="py-24 px-4 bg-gradient-to-b from-gray-50 via-gray-100 to-white dark:from-gray-800 dark:via-gray-800/70 dark:to-gray-900 transition-colors duration-300">
+<section class="py-24 px-4 bg-gradient-to-b from-gray-50 via-gray-100 to-white dark:from-gray-800 dark:via-gray-800/70 dark:to-gray-900 transition-colors duration-300"
+         x-data={alpineDataString}>
   <div class="container mx-auto">
     <div class="text-center mb-16 relative" data-aos="fade-up">
       <div class="absolute -top-10 left-1/2 transform -translate-x-1/2 w-24 h-24 bg-gradient-to-br from-[#c2783c]/20 to-orange-500/20 rounded-full blur-3xl dark:from-[#d38545]/30 dark:to-orange-600/30"></div>
@@ -38,14 +122,22 @@ const services = [
         <span class="inline-block text-[#c2783c] dark:text-[#d38545] transform transition-transform hover:scale-110 duration-300">🔧</span> Was wir machen
       </h2>
       <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-        Maßgeschneiderte Automatisierungslösungen für Ihr Unternehmen
+        Wir nehmen Ihnen die Arbeit ab, die Sie vom Wesentlichen abhält.
       </p>
     </div>
     
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-      {services.map((s, i) => (
-        <div data-aos="fade-up" data-aos-delay={i * 100}>
-          <ServiceCard {...s} />
+      {services.map((service, index) => (
+        <div 
+          @click={`selectedFeature = features[${index}]; openModal = true`}
+          class="cursor-pointer h-full flex flex-col" 
+          data-aos="fade-up" 
+          data-aos-delay={index * 100}
+        >
+          <ServiceCard {...service} />
+          <div class="text-center mt-2">
+            <span class="text-sm font-medium text-[#c2783c] dark:text-[#d38545] hover:underline">Details anzeigen →</span>
+          </div>
         </div>
       ))}
     </div>
@@ -61,6 +153,67 @@ const services = [
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
         </a>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div x-show="openModal" 
+         x-cloak 
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4 z-[999]" 
+         aria-labelledby="modal-title" 
+         role="dialog" 
+         aria-modal="true">
+      <div @click.away="openModal = false" class="bg-white dark:bg-gray-800 p-6 sm:p-8 rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto ring-1 ring-gray-300 dark:ring-gray-700">
+        <div class="flex justify-between items-center mb-6">
+          <h3 id="modal-title" class="text-2xl font-bold text-gray-900 dark:text-white" x-text="selectedFeature.title"></h3>
+          <button @click="openModal = false" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+          </button>
+        </div>
+        <img x-show="selectedFeature.image" :src="selectedFeature.image" :alt="selectedFeature.title" class="w-full h-auto max-h-72 object-cover rounded-lg mb-6 shadow-md" />
+        
+        <!-- Überarbeiteter Inhaltsbereich für Key Points -->
+        <template x-if="openModal && selectedFeature.keyPoints && selectedFeature.keyPoints.length > 0">
+          <div class="space-y-8 mt-6">
+            <template x-for="(kp, kpIndex) in selectedFeature.keyPoints" :key="kpIndex">
+              <div class="keypoint-block border border-gray-200 dark:border-gray-600 rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div class="flex items-start space-x-3 mb-3">
+                  <span class="text-3xl pt-1" x-text="kp.iconPlaceholder"></span>
+                  <h5 class="text-xl font-semibold text-gray-800 dark:text-white" x-text="kp.title"></h5>
+                </div>
+                <p class="text-gray-700 dark:text-gray-300 mb-3 ml-10" x-text="kp.text"></p>
+                <template x-if="kp.metrics && kp.metrics.length > 0">
+                  <ul class="list-none pl-10 space-y-1">
+                    <template x-for="(metric, metricIndex) in kp.metrics" :key="metricIndex">
+                      <li class="font-semibold text-green-600 dark:text-green-400 flex items-center">
+                        <svg class="h-5 w-5 mr-2 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                           <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                        <span x-text="metric"></span>
+                      </li>
+                    </template>
+                  </ul>
+                </template>
+              </div>
+            </template>
+          </div>
+        </template>
+        
+        <!-- CTA Buttons -->
+        <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700 flex flex-col sm:flex-row sm:justify-end space-y-3 sm:space-y-0 sm:space-x-4" x-show="selectedFeature.cta && selectedFeature.cta.length > 0">
+          <template x-for="(button, btnIndex) in selectedFeature.cta" :key="btnIndex">
+            <a :href="button.href" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-medium text-center text-white bg-[#c2783c] rounded-lg hover:bg-[#b46c35] focus:ring-4 focus:outline-none focus:ring-[#c2783c]/50 dark:focus:ring-[#d38545]/50 transition-colors">
+              <span x-text="button.text"></span>
+            </a>
+          </template>
+        </div>
+
       </div>
     </div>
   </div>
